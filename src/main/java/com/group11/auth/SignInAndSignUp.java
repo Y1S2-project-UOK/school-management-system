@@ -36,9 +36,10 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         btnLogIn = new javax.swing.JButton();
         btnClearSignIn = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
+        checkShowPassword = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         lblPasswordSignUp = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        txtNameSignUp = new javax.swing.JTextField();
         lblConfirmPasswordSignUp = new javax.swing.JLabel();
         btnClearSignUp = new javax.swing.JButton();
         btnSignUp = new javax.swing.JButton();
@@ -66,8 +67,20 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         btnLogIn.setText("Log In");
 
         btnClearSignIn.setText("Clear");
+        btnClearSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearSignInActionPerformed(evt);
+            }
+        });
 
         txtPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        checkShowPassword.setText("Show Password");
+        checkShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkShowPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -78,13 +91,17 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 135, Short.MAX_VALUE)
+                        .addGap(0, 161, Short.MAX_VALUE)
                         .addComponent(btnClearSignIn)
                         .addGap(75, 75, 75)
                         .addComponent(btnLogIn)
                         .addGap(75, 75, 75))
                     .addComponent(txtPassword))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(checkShowPassword)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -103,7 +120,9 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                 .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addComponent(checkShowPassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogIn)
                     .addComponent(btnClearSignIn))
@@ -127,8 +146,13 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         lblConfirmPasswordSignUp.setText("Confirm Password : ");
 
         btnClearSignUp.setText("Clear");
+        btnClearSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearSignUpActionPerformed(evt);
+            }
+        });
 
-        btnSignUp.setText("Log In");
+        btnSignUp.setText("Sign Up");
 
         lblName.setText("Name :");
 
@@ -136,7 +160,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
 
         lblPosition.setText("Position :");
 
-        cmbxPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Staff Member", "Teacher", "Student", "Parent" }));
+        cmbxPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Staff Member", "Teacher", "Student", "Parent" }));
 
         lblReason.setText("Reason To Join :");
 
@@ -154,7 +178,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPasswordSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtName)
+                            .addComponent(txtNameSignUp)
                             .addComponent(txtEmailSignUp)
                             .addComponent(lblConfirmPasswordSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtConfirmPasswordSignUp)
@@ -173,7 +197,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                         .addComponent(btnSignUp)
                         .addGap(92, 92, 92)
                         .addComponent(btnClearSignUp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -182,7 +206,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNameSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEmailSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -232,6 +256,32 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnClearSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearSignUpActionPerformed
+        if(evt.getSource()==btnClearSignUp){
+        txtEmailSignUp.setText("");
+        txtPasswordSignUp.setText("");
+        txtConfirmPasswordSignUp.setText("");
+        txtNameSignUp.setText("");
+        cmbxPosition.setSelectedIndex(0);
+        txtarReason.setText(""); 
+        }
+    }//GEN-LAST:event_btnClearSignUpActionPerformed
+
+    private void btnClearSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearSignInActionPerformed
+        txtEmail1.setText("");
+        txtPassword.setText("");
+    }//GEN-LAST:event_btnClearSignInActionPerformed
+
+    private void checkShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkShowPasswordActionPerformed
+          if (evt.getSource() == checkShowPassword) {
+            if (checkShowPassword.isSelected()) {
+                txtPassword.setEchoChar((char) 0);
+            } else {
+                txtPassword.setEchoChar('*');
+            }
+        }
+    }//GEN-LAST:event_checkShowPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +322,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     private javax.swing.JButton btnClearSignUp;
     private javax.swing.JButton btnLogIn;
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JCheckBox checkShowPassword;
     private javax.swing.JComboBox<String> cmbxPosition;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -290,7 +341,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtConfirmPasswordSignUp;
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtEmailSignUp;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtNameSignUp;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JPasswordField txtPasswordSignUp;
     private javax.swing.JTextArea txtarReason;

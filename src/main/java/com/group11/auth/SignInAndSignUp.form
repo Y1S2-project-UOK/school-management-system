@@ -79,7 +79,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblPassword" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="135" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="161" max="32767" attributes="0"/>
                               <Component id="btnClearSignIn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                               <Component id="btnLogIn" min="-2" max="-2" attributes="0"/>
@@ -88,6 +88,11 @@
                           <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -112,7 +117,9 @@
                       <Component id="lblPassword" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtPassword" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace pref="308" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="259" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnLogIn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnClearSignIn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -158,6 +165,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearSignInActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtPassword">
               <Properties>
@@ -165,6 +175,14 @@
                   <Color id="Text Cursor"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkShowPassword">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show Password"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkShowPasswordActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -186,7 +204,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNameSignUp" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
                                   <Component id="lblConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
@@ -208,7 +226,7 @@
                               <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                               <Component id="btnClearSignUp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="132" max="32767" attributes="0"/>
+                              <EmptySpace pref="148" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -221,7 +239,7 @@
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Component id="lblName" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtName" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtNameSignUp" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblEmailSignUp" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -259,7 +277,7 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtName">
+            <Component class="javax.swing.JTextField" name="txtNameSignUp">
             </Component>
             <Component class="javax.swing.JLabel" name="lblConfirmPasswordSignUp">
               <Properties>
@@ -270,10 +288,13 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearSignUpActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSignUp">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Log In"/>
+                <Property name="text" type="java.lang.String" value="Sign Up"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblName">
@@ -300,11 +321,12 @@
             <Component class="javax.swing.JComboBox" name="cmbxPosition">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Staff Member"/>
-                    <StringItem index="1" value="Teacher"/>
-                    <StringItem index="2" value="Student"/>
-                    <StringItem index="3" value="Parent"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="..."/>
+                    <StringItem index="1" value="Staff Member"/>
+                    <StringItem index="2" value="Teacher"/>
+                    <StringItem index="3" value="Student"/>
+                    <StringItem index="4" value="Parent"/>
                   </StringArray>
                 </Property>
               </Properties>

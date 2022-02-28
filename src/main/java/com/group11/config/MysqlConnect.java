@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
 public class MysqlConnect {
-    private static final String URL = "jdbc:mysql://localhost:3308/schoolManagementSystem";
+    private static final String URL = "jdbc:mysql://localhost:3306/schoolManagementSystem";
     private static final String DATABASE_USER_NAME = "root";
-    private static final String DATABASE_PASSWORD = "nimtara";
+    private static final String DATABASE_PASSWORD = "123@Ishan";
     Connection con = null;
    
     public static Connection ConnectDB(){
