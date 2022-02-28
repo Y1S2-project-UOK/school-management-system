@@ -4,6 +4,13 @@
  */
 package com.group11.auth;
 
+import com.group11.config.EmailValidate;
+import com.group11.config.MysqlConnect;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
@@ -153,6 +160,11 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         });
 
         btnSignUp.setText("Sign Up");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         lblName.setText("Name :");
 
@@ -257,13 +269,13 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearSignUpActionPerformed
-        if(evt.getSource()==btnClearSignUp){
-        txtEmailSignUp.setText("");
-        txtPasswordSignUp.setText("");
-        txtConfirmPasswordSignUp.setText("");
-        txtNameSignUp.setText("");
-        cmbxPosition.setSelectedIndex(0);
-        txtarReason.setText(""); 
+        if (evt.getSource() == btnClearSignUp) {
+            txtEmailSignUp.setText("");
+            txtPasswordSignUp.setText("");
+            txtConfirmPasswordSignUp.setText("");
+            txtNameSignUp.setText("");
+            cmbxPosition.setSelectedIndex(0);
+            txtarReason.setText("");
         }
     }//GEN-LAST:event_btnClearSignUpActionPerformed
 
@@ -273,7 +285,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearSignInActionPerformed
 
     private void checkShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkShowPasswordActionPerformed
-          if (evt.getSource() == checkShowPassword) {
+        if (evt.getSource() == checkShowPassword) {
             if (checkShowPassword.isSelected()) {
                 txtPassword.setEchoChar((char) 0);
             } else {
@@ -281,6 +293,69 @@ public class SignInAndSignUp extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_checkShowPasswordActionPerformed
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        if (evt.getSource() == btnSignUp) {
+            char[] pwdText = txtPasswordSignUp.getPassword();
+            String pwd = new String(pwdText);
+            char[] conformPwdText = txtConfirmPasswordSignUp.getPassword();
+            String conformPwd = new String(conformPwdText);
+            String email = txtEmailSignUp.getText();
+            String name = txtNameSignUp.getText();
+            String reasonToJoin = txtarReason.getText();
+            int positionSelectionIndex = cmbxPosition.getSelectedIndex();
+
+            //check all fields are not empty
+            if(email.equals("")&&name.equals("")&&reasonToJoin.equals("")){
+                JOptionPane.showMessageDialog(this, "All fields must not empty");
+            }
+            //validate email
+            else if(!EmailValidate.patternMatches(email)){
+                JOptionPane.showMessageDialog(this, "Email must be valid");
+            }
+            //validate password
+            // else if(pwd!=conformPwd){
+            //     System.out.println(pwd);
+            //     System.out.println(conformPwd);
+            //     JOptionPane.showMessageDialog(this, "password must be match");
+            // }
+            //validate position selection
+            else if(positionSelectionIndex==0){
+                JOptionPane.showMessageDialog(this, "select position from the list");
+            }
+            else{
+                //sava data to database
+                try {
+                    Connection conn = MysqlConnect.ConnectDB();
+                    String query = " insert into loginUserDetails (Email, fullName, loginPassword, reasonToJoin, aproveStatus)"
+                            + " values (?, ?, ?, ?, ?)";
+    
+                    PreparedStatement preparedStmt = conn.prepareStatement(query);
+                    preparedStmt.setString(1, email);
+                    preparedStmt.setString(2, name);
+                    preparedStmt.setString(3, pwd);
+                    preparedStmt.setString(4, reasonToJoin);
+                    preparedStmt.setInt(5, 0);
+    
+                    preparedStmt.execute();
+                    conn.close();
+
+                    txtEmailSignUp.setText("");
+                    txtPasswordSignUp.setText("");
+                    txtConfirmPasswordSignUp.setText("");
+                    txtNameSignUp.setText("");
+                    cmbxPosition.setSelectedIndex(0);
+                    txtarReason.setText("");
+
+                    JOptionPane.showMessageDialog(this, "account created");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                }
+            }
+            
+        }
+
+    }//GEN-LAST:event_btnSignUpActionPerformed
 
     /**
      * @param args the command line arguments
