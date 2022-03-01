@@ -4,6 +4,14 @@
  */
 package com.group11.auth;
 
+import com.group11.config.EmailValidate;
+import com.group11.config.MysqlConnect;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
@@ -65,6 +73,11 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         lblEmail1.setText("E-mail :");
 
         btnLogIn.setText("Log In");
+        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogInActionPerformed(evt);
+            }
+        });
 
         btnClearSignIn.setText("Clear");
         btnClearSignIn.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +166,11 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         });
 
         btnSignUp.setText("Sign Up");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         lblName.setText("Name :");
 
@@ -257,13 +275,13 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearSignUpActionPerformed
-        if(evt.getSource()==btnClearSignUp){
-        txtEmailSignUp.setText("");
-        txtPasswordSignUp.setText("");
-        txtConfirmPasswordSignUp.setText("");
-        txtNameSignUp.setText("");
-        cmbxPosition.setSelectedIndex(0);
-        txtarReason.setText(""); 
+        if (evt.getSource() == btnClearSignUp) {
+            txtEmailSignUp.setText("");
+            txtPasswordSignUp.setText("");
+            txtConfirmPasswordSignUp.setText("");
+            txtNameSignUp.setText("");
+            cmbxPosition.setSelectedIndex(0);
+            txtarReason.setText("");
         }
     }//GEN-LAST:event_btnClearSignUpActionPerformed
 
@@ -273,7 +291,7 @@ public class SignInAndSignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearSignInActionPerformed
 
     private void checkShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkShowPasswordActionPerformed
-          if (evt.getSource() == checkShowPassword) {
+        if (evt.getSource() == checkShowPassword) {
             if (checkShowPassword.isSelected()) {
                 txtPassword.setEchoChar((char) 0);
             } else {
@@ -281,6 +299,107 @@ public class SignInAndSignUp extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_checkShowPasswordActionPerformed
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        if (evt.getSource() == btnSignUp) {
+            char[] pwdText = txtPasswordSignUp.getPassword();
+            String pwd = new String(pwdText);
+            char[] conformPwdText = txtConfirmPasswordSignUp.getPassword();
+            String conformPwd = new String(conformPwdText);
+            String email = txtEmailSignUp.getText();
+            String fullName = txtNameSignUp.getText();
+            String reasonToJoin = txtarReason.getText();
+            int positionSelectionIndex = cmbxPosition.getSelectedIndex();
+
+            //check all fields are not empty
+            if(email.equals("")||fullName.equals("")||reasonToJoin.equals("")||pwd.equals("")){
+                JOptionPane.showMessageDialog(this, "All fields must not empty");
+                
+            }
+            //validate email
+            else if(!EmailValidate.patternMatches(email)){
+                JOptionPane.showMessageDialog(this, "Email must be valid");
+            }
+            //validate password
+            else if(!pwd.equals(conformPwd)){
+                JOptionPane.showMessageDialog(this, "password must be match");
+            }
+            //validate position selection
+            else if(positionSelectionIndex==0){
+                JOptionPane.showMessageDialog(this, "select position from the list");
+            }
+            else{
+                //sava data to database
+                try {
+                    Connection conn = MysqlConnect.ConnectDB();
+                    String query = " insert into loginUserDetails (Email, fullName, loginPassword,position, reasonToJoin, aproveStatus)"
+                            + " values (?, ?, ?, ?, ?,?)";
+    
+                    PreparedStatement preparedStmt = conn.prepareStatement(query);
+                    preparedStmt.setString(1, email);
+                    preparedStmt.setString(2, fullName);
+                    preparedStmt.setString(3, pwd);
+                    preparedStmt.setInt(4, positionSelectionIndex);
+                    preparedStmt.setString(5, reasonToJoin);
+                    preparedStmt.setInt(6, 0);
+    
+                    preparedStmt.execute();
+                    conn.close();
+
+                    txtEmailSignUp.setText("");
+                    txtPasswordSignUp.setText("");
+                    txtConfirmPasswordSignUp.setText("");
+                    txtNameSignUp.setText("");
+                    cmbxPosition.setSelectedIndex(0);
+                    txtarReason.setText("");
+
+                    JOptionPane.showMessageDialog(this, "account created");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                }
+            }
+            
+        }
+
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
+        if(evt.getSource()==btnLogIn){
+            char[] pwdText = txtPassword.getPassword();
+            String pwd = new String(pwdText);
+            String email = txtEmail1.getText();
+
+            if(pwd.equals("")||email.equals("")){
+                JOptionPane.showMessageDialog(this, "all field must be filed");
+            }else{
+                //get data from data base
+                try {
+                    Connection conn = MysqlConnect.ConnectDB();
+                    PreparedStatement st = (PreparedStatement) conn
+                        .prepareStatement("Select  approveStatus from loginUserDetails where Email=? and loginPassword=?");
+
+                    st.setString(1, email);
+                    st.setString(2, pwd);
+                    ResultSet rs = st.executeQuery();
+                    if (rs.next()) {
+                        //check user approveStatus
+                        if(rs.getInt(1)==1){
+                            // dispose();
+                            JOptionPane.showMessageDialog(this, "login successful");
+
+                        }else{
+                            JOptionPane.showMessageDialog(this, "your signup request is pending try again some time");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong Username & Password");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                }
+            }
+
+        }
+    }//GEN-LAST:event_btnLogInActionPerformed
 
     /**
      * @param args the command line arguments
