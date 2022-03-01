@@ -301,12 +301,12 @@ public class SignInAndSignUp extends javax.swing.JFrame {
             char[] conformPwdText = txtConfirmPasswordSignUp.getPassword();
             String conformPwd = new String(conformPwdText);
             String email = txtEmailSignUp.getText();
-            String name = txtNameSignUp.getText();
+            String fullName = txtNameSignUp.getText();
             String reasonToJoin = txtarReason.getText();
             int positionSelectionIndex = cmbxPosition.getSelectedIndex();
 
             //check all fields are not empty
-            if(email.equals("")||name.equals("")||reasonToJoin.equals("")||pwd.equals("")){
+            if(email.equals("")||fullName.equals("")||reasonToJoin.equals("")||pwd.equals("")){
                 JOptionPane.showMessageDialog(this, "All fields must not empty");
                 
             }
@@ -326,15 +326,16 @@ public class SignInAndSignUp extends javax.swing.JFrame {
                 //sava data to database
                 try {
                     Connection conn = MysqlConnect.ConnectDB();
-                    String query = " insert into loginUserDetails (Email, fullName, loginPassword, reasonToJoin, aproveStatus)"
-                            + " values (?, ?, ?, ?, ?)";
+                    String query = " insert into loginUserDetails (Email, fullName, loginPassword,position, reasonToJoin, aproveStatus)"
+                            + " values (?, ?, ?, ?, ?,?)";
     
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
                     preparedStmt.setString(1, email);
-                    preparedStmt.setString(2, name);
+                    preparedStmt.setString(2, fullName);
                     preparedStmt.setString(3, pwd);
-                    preparedStmt.setString(4, reasonToJoin);
-                    preparedStmt.setInt(5, 0);
+                    preparedStmt.setInt(4, positionSelectionIndex);
+                    preparedStmt.setString(5, reasonToJoin);
+                    preparedStmt.setInt(6, 0);
     
                     preparedStmt.execute();
                     conn.close();
