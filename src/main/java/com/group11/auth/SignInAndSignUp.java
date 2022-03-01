@@ -8,6 +8,7 @@ import com.group11.config.EmailValidate;
 import com.group11.config.MysqlConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
@@ -72,6 +73,11 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         lblEmail1.setText("E-mail :");
 
         btnLogIn.setText("Log In");
+        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogInActionPerformed(evt);
+            }
+        });
 
         btnClearSignIn.setText("Clear");
         btnClearSignIn.addActionListener(new java.awt.event.ActionListener() {
@@ -356,6 +362,44 @@ public class SignInAndSignUp extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
+        if(evt.getSource()==btnLogIn){
+            char[] pwdText = txtPassword.getPassword();
+            String pwd = new String(pwdText);
+            String email = txtEmail1.getText();
+
+            if(pwd.equals("")||email.equals("")){
+                JOptionPane.showMessageDialog(this, "all field must be filed");
+            }else{
+                //get data from data base
+                try {
+                    Connection conn = MysqlConnect.ConnectDB();
+                    PreparedStatement st = (PreparedStatement) conn
+                        .prepareStatement("Select  approveStatus from loginUserDetails where Email=? and loginPassword=?");
+
+                    st.setString(1, email);
+                    st.setString(2, pwd);
+                    ResultSet rs = st.executeQuery();
+                    if (rs.next()) {
+                        //check user approveStatus
+                        if(rs.getInt(1)==1){
+                            // dispose();
+                            JOptionPane.showMessageDialog(this, "login successful");
+
+                        }else{
+                            JOptionPane.showMessageDialog(this, "your signup request is pending try again some time");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Wrong Username & Password");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                }
+            }
+
+        }
+    }//GEN-LAST:event_btnLogInActionPerformed
 
     /**
      * @param args the command line arguments
