@@ -306,19 +306,18 @@ public class SignInAndSignUp extends javax.swing.JFrame {
             int positionSelectionIndex = cmbxPosition.getSelectedIndex();
 
             //check all fields are not empty
-            if(email.equals("")&&name.equals("")&&reasonToJoin.equals("")){
+            if(email.equals("")||name.equals("")||reasonToJoin.equals("")||pwd.equals("")){
                 JOptionPane.showMessageDialog(this, "All fields must not empty");
+                
             }
             //validate email
             else if(!EmailValidate.patternMatches(email)){
                 JOptionPane.showMessageDialog(this, "Email must be valid");
             }
             //validate password
-            // else if(pwd!=conformPwd){
-            //     System.out.println(pwd);
-            //     System.out.println(conformPwd);
-            //     JOptionPane.showMessageDialog(this, "password must be match");
-            // }
+            else if(!pwd.equals(conformPwd)){
+                JOptionPane.showMessageDialog(this, "password must be match");
+            }
             //validate position selection
             else if(positionSelectionIndex==0){
                 JOptionPane.showMessageDialog(this, "select position from the list");
