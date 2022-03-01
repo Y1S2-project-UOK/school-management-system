@@ -62,133 +62,6 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel2">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Sign In">
-                <Property name="tabTitle" type="java.lang.String" value="Sign In"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblPassword" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="161" max="32767" attributes="0"/>
-                              <Component id="btnClearSignIn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                              <Component id="btnLogIn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblEmail1" pref="409" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtEmail1" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                      <Component id="lblPassword" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtPassword" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="259" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnLogIn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnClearSignIn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="lblEmail1" min="-2" pref="32" max="-2" attributes="0"/>
-                          <EmptySpace pref="465" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="txtEmail1" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace pref="428" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblPassword">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Password :"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblEmail1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="E-mail :"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtEmail1">
-            </Component>
-            <Component class="javax.swing.JButton" name="btnLogIn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Log In"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogInActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnClearSignIn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clear"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearSignInActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JPasswordField" name="txtPassword">
-              <Properties>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Text Cursor"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="checkShowPassword">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Show Password"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkShowPasswordActionPerformed"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -202,34 +75,32 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtName" max="32767" attributes="0"/>
+                          <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPasswordSignUp" alignment="1" max="32767" attributes="0"/>
+                          <Component id="lblReason" alignment="0" pref="435" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtNameSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtPasswordSignUp" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="lblName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblEmailSignUp" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="lblPosition" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="lblPosition" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cmbxPosition" min="-2" pref="189" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="lblReason" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblName" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="lblEmailSignUp" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="lblPasswordSignUp" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="btnClearSignUp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="148" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnClearSignUp" min="-2" pref="83" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnSignUp" min="-2" pref="88" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -239,37 +110,37 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                      <Component id="lblName" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                      <Component id="lblName" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtNameSignUp" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblEmailSignUp" min="-2" pref="25" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtEmailSignUp" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblPasswordSignUp" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtPasswordSignUp" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="txtName" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblConfirmPasswordSignUp" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="lblEmailSignUp" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtConfirmPasswordSignUp" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="txtEmailSignUp" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblPasswordSignUp" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtPasswordSignUp" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblConfirmPasswordSignUp" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtConfirmPasswordSignUp" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblPosition" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="lblPosition" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="cmbxPosition" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblReason" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="lblReason" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="63" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnClearSignUp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSignUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnClearSignUp" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnSignUp" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -277,10 +148,10 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblPasswordSignUp">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Password"/>
+                <Property name="text" type="java.lang.String" value="Password :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNameSignUp">
+            <Component class="javax.swing.JTextField" name="txtName">
             </Component>
             <Component class="javax.swing.JLabel" name="lblConfirmPasswordSignUp">
               <Properties>
@@ -327,12 +198,11 @@
             <Component class="javax.swing.JComboBox" name="cmbxPosition">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="..."/>
-                    <StringItem index="1" value="Staff Member"/>
-                    <StringItem index="2" value="Teacher"/>
-                    <StringItem index="3" value="Student"/>
-                    <StringItem index="4" value="Parent"/>
+                  <StringArray count="4">
+                    <StringItem index="0" value="Staff Member"/>
+                    <StringItem index="1" value="Teacher"/>
+                    <StringItem index="2" value="Student"/>
+                    <StringItem index="3" value="Parent"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -360,6 +230,114 @@
                 </Component>
               </SubComponents>
             </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Sign In">
+                <Property name="tabTitle" type="java.lang.String" value="Sign In"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lblPassword1" pref="143" max="32767" attributes="0"/>
+                              <Component id="lblEmail1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btnClearSignIn" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <EmptySpace pref="233" max="32767" attributes="0"/>
+                                  <Component id="btnLogIn" min="-2" pref="87" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtPassword1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEmail1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
+                      <Component id="lblEmail1" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtEmail1" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblPassword1" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Component id="txtPassword1" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnClearSignIn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="btnLogIn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="119" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblPassword1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Password :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEmail1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="E-mail :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEmail1">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLogIn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Log In"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogInActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnClearSignIn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearSignInActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="txtPassword1">
+              <Properties>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Text Cursor"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkShowPassword">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show Password"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkShowPasswordActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
