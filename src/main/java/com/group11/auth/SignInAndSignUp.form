@@ -251,23 +251,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnClearSignIn" min="-2" pref="89" max="-2" attributes="0"/>
-                                  <EmptySpace pref="52" max="32767" attributes="0"/>
-                                  <Component id="btnLogIn" min="-2" pref="87" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="txtPassword1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtEmail1" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="checkShowPassword" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnClearSignIn" min="-2" pref="89" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="btnLogIn" min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblPassword1" pref="143" max="32767" attributes="0"/>
                               <Component id="lblEmail1" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="txtEmail1" pref="412" max="32767" attributes="0"/>
+                          <Component id="txtPassword1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="211" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
