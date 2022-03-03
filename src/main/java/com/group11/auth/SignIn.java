@@ -165,9 +165,10 @@ public class SignIn extends javax.swing.JFrame {
                     if (rs.next()) {
                         //check user approveStatus
                         if (rs.getInt(1) == 1) {
-                            JOptionPane.showMessageDialog(this, "login Succefull");
+                            //JOptionPane.showMessageDialog(this, "login Succefull");
                             dispose();
-                            new Home().setVisible(true);
+                            ProgressBar p = new ProgressBar();
+                            p.setVisible(true);
 
                         } else {
                             JOptionPane.showMessageDialog(this, "your signup request is pending try again some time");
