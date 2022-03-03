@@ -28,7 +28,7 @@ public class ProgressBar extends javax.swing.JFrame {
                     
                     pbrProgressBar.setValue(i);
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(20);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(ProgressBar.class.getName()).log(Level.SEVERE, null, ex);
                     }
