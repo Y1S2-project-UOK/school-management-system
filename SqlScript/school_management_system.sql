@@ -1,6 +1,6 @@
+drop database school_management_system;
 create database school_management_system;
 use school_management_system;
-/*drop database school_management_system;*/
 create table staff (
 	staffRegNo char(10) not null primary key,
     staffName varchar(255),
