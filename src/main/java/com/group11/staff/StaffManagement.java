@@ -33,11 +33,11 @@ public class StaffManagement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnUserManagement = new javax.swing.JButton();
         btnStaffManagement = new javax.swing.JButton();
-        btnStudentManagement1 = new javax.swing.JButton();
+        btnStudentManagement = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
-        btnAddStaffMember = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnStaffAttendance = new javax.swing.JButton();
+        btnEditStaffMemberDetails = new javax.swing.JButton();
+        btnAddNewStaffMember = new javax.swing.JButton();
         btnStaffResignation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +55,7 @@ public class StaffManagement extends javax.swing.JFrame {
             }
         });
 
-        btnStudentManagement1.setText("Student Management");
+        btnStudentManagement.setText("Student Management");
 
         btnSignOut.setText("Sign Out");
 
@@ -76,7 +76,7 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUserManagement, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStudentManagement1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStudentManagement, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnStaffManagement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,7 +87,7 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(btnStaffManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnStudentManagement1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnStudentManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnUserManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
@@ -95,14 +95,14 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        btnAddStaffMember.setText("Add New Staff Member");
+        btnStaffAttendance.setText("Staff Attendance");
 
-        jButton1.setText("Edit Staff Member Details");
+        btnEditStaffMemberDetails.setText("Edit Staff Member Details");
 
-        jButton2.setText("Staff Attendance");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAddNewStaffMember.setText("Add New Staff Member");
+        btnAddNewStaffMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAddNewStaffMemberActionPerformed(evt);
             }
         });
 
@@ -118,9 +118,9 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAddStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStaffAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddNewStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditStaffMemberDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnStaffResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(406, Short.MAX_VALUE))
         );
@@ -130,11 +130,11 @@ public class StaffManagement extends javax.swing.JFrame {
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddNewStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnAddStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnStaffAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditStaffMemberDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnStaffResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(121, 121, 121))
@@ -150,11 +150,11 @@ public class StaffManagement extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAddNewStaffMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewStaffMemberActionPerformed
         dispose();
         AddNewStaffMember add = new AddNewStaffMember();
         add.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAddNewStaffMemberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,14 +192,14 @@ public class StaffManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddStaffMember;
+    private javax.swing.JButton btnAddNewStaffMember;
+    private javax.swing.JButton btnEditStaffMemberDetails;
     private javax.swing.JButton btnSignOut;
+    private javax.swing.JButton btnStaffAttendance;
     private javax.swing.JButton btnStaffManagement;
     private javax.swing.JButton btnStaffResignation;
-    private javax.swing.JButton btnStudentManagement1;
+    private javax.swing.JButton btnStudentManagement;
     private javax.swing.JButton btnUserManagement;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

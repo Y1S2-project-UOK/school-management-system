@@ -29,9 +29,9 @@
               <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnAddStaffMember" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="btnStaffAttendance" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="btnAddNewStaffMember" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="btnEditStaffMemberDetails" min="-2" pref="173" max="-2" attributes="0"/>
                   <Component id="btnStaffResignation" min="-2" pref="173" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="406" max="32767" attributes="0"/>
@@ -44,11 +44,11 @@
           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="btnAddNewStaffMember" min="-2" pref="57" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnAddStaffMember" min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="btnStaffAttendance" min="-2" pref="57" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="btnEditStaffMemberDetails" min="-2" pref="57" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnStaffResignation" min="-2" pref="57" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
@@ -84,7 +84,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnUserManagement" alignment="1" max="32767" attributes="0"/>
-                      <Component id="btnStudentManagement1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnStudentManagement" alignment="1" max="32767" attributes="0"/>
                       <Component id="btnStaffManagement" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -98,7 +98,7 @@
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="btnStaffManagement" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnStudentManagement1" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnStudentManagement" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnUserManagement" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
@@ -127,7 +127,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStaffManagementActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnStudentManagement1">
+        <Component class="javax.swing.JButton" name="btnStudentManagement">
           <Properties>
             <Property name="text" type="java.lang.String" value="Student Management"/>
           </Properties>
@@ -139,22 +139,22 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnAddStaffMember">
+    <Component class="javax.swing.JButton" name="btnStaffAttendance">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add New Staff Member"/>
+        <Property name="text" type="java.lang.String" value="Staff Attendance"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnEditStaffMemberDetails">
       <Properties>
         <Property name="text" type="java.lang.String" value="Edit Staff Member Details"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnAddNewStaffMember">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Staff Attendance"/>
+        <Property name="text" type="java.lang.String" value="Add New Staff Member"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddNewStaffMemberActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnStaffResignation">
