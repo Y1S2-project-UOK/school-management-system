@@ -35,7 +35,7 @@ public class SignUp extends javax.swing.JFrame {
     private void initComponents() {
 
         lblName = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        txtContactNumber = new javax.swing.JTextField();
         lblEmailSignUp = new javax.swing.JLabel();
         txtEmailSignUp = new javax.swing.JTextField();
         lblPasswordSignUp = new javax.swing.JLabel();
@@ -44,12 +44,14 @@ public class SignUp extends javax.swing.JFrame {
         txtConfirmPasswordSignUp = new javax.swing.JPasswordField();
         cmbxPosition = new javax.swing.JComboBox<>();
         lblPosition = new javax.swing.JLabel();
-        lblReason = new javax.swing.JLabel();
+        lblContactNumber = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtarReason = new javax.swing.JTextArea();
         btnClearSignUp = new javax.swing.JButton();
         btnSignUp = new javax.swing.JButton();
         btnSignIn = new javax.swing.JButton();
+        lblReason1 = new javax.swing.JLabel();
+        txtName1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign Up");
@@ -66,7 +68,7 @@ public class SignUp extends javax.swing.JFrame {
 
         lblPosition.setText("Position :");
 
-        lblReason.setText("Reason To Join :");
+        lblContactNumber.setText("Contanct Number :");
 
         txtarReason.setColumns(20);
         txtarReason.setRows(5);
@@ -93,6 +95,8 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        lblReason1.setText("Reason To Join :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,12 +104,12 @@ public class SignUp extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtName)
+                    .addComponent(txtContactNumber)
                     .addComponent(txtEmailSignUp)
                     .addComponent(lblConfirmPasswordSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtConfirmPasswordSignUp)
                     .addComponent(txtPasswordSignUp, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblReason, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+                    .addComponent(lblContactNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,22 +123,28 @@ public class SignUp extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnClearSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(312, 312, 312)
+                        .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblReason1, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(txtName1)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(50, 50, 50)
                 .addComponent(lblEmailSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmailSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,17 +160,34 @@ public class SignUp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbxPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(lblReason, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClearSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSignIn)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(lblContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btnClearSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(23, 23, 23))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSignIn)
+                        .addContainerGap())))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(385, Short.MAX_VALUE)
+                    .addComponent(lblReason1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(227, 227, 227)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(71, 71, 71)
+                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(531, Short.MAX_VALUE)))
         );
 
         pack();
@@ -172,9 +199,10 @@ public class SignUp extends javax.swing.JFrame {
             txtEmailSignUp.setText("");
             txtPasswordSignUp.setText("");
             txtConfirmPasswordSignUp.setText("");
-            txtName.setText("");
+            txtContactNumber.setText("");
             cmbxPosition.setSelectedIndex(0);
             txtarReason.setText("");
+            txtContactNumber.setText("");
         }
     }//GEN-LAST:event_btnClearSignUpActionPerformed
 
@@ -185,12 +213,13 @@ public class SignUp extends javax.swing.JFrame {
             char[] conformPwdText = txtConfirmPasswordSignUp.getPassword();
             String conformPwd = new String(conformPwdText);
             String email = txtEmailSignUp.getText();
-            String fullName = txtName.getText();
+            String fullName = txtContactNumber.getText();
             String reasonToJoin = txtarReason.getText();
             int positionSelectionIndex = cmbxPosition.getSelectedIndex();
+            String contactNumber = txtContactNumber.getText();
 
             //check all fields are not empty
-            if(email.equals("")||fullName.equals("")||reasonToJoin.equals("")||pwd.equals("")){
+            if(email.equals("")||fullName.equals("")||reasonToJoin.equals("")||pwd.equals("") ||contactNumber.equals("")){
                 JOptionPane.showMessageDialog(this, "All fields must not empty");
 
             }
@@ -211,15 +240,16 @@ public class SignUp extends javax.swing.JFrame {
                 try {
                     Connection conn = MysqlConnect.ConnectDB();
                     String query = " insert into system_users (full_name, email, login_password, position, reason_to_join, contact_no, aprove_status)"
-                    + " values (?, ?, ?, ?, ?,?, ?)";
+                    + " values (?, ?, ?, ?, ?,?,?)";
 
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setString(1, email);
-                    preparedStmt.setString(2, fullName);
+                    preparedStmt.setString(1, fullName);
+                    preparedStmt.setString(2, email);
                     preparedStmt.setString(3, pwd);
                     preparedStmt.setInt(4, positionSelectionIndex);
                     preparedStmt.setString(5, reasonToJoin);
-                    preparedStmt.setInt(6, 0);
+                    preparedStmt.setString(6, contactNumber);
+                    preparedStmt.setInt(7, 0);
 
                     preparedStmt.execute();
                     conn.close();
@@ -227,9 +257,10 @@ public class SignUp extends javax.swing.JFrame {
                     txtEmailSignUp.setText("");
                     txtPasswordSignUp.setText("");
                     txtConfirmPasswordSignUp.setText("");
-                    txtName.setText("");
+                    txtContactNumber.setText("");
                     cmbxPosition.setSelectedIndex(0);
                     txtarReason.setText("");
+                    txtContactNumber.setText("");
 
                     JOptionPane.showMessageDialog(this, "account created");
                     dispose();
@@ -291,14 +322,16 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbxPosition;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblConfirmPasswordSignUp;
+    private javax.swing.JLabel lblContactNumber;
     private javax.swing.JLabel lblEmailSignUp;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPasswordSignUp;
     private javax.swing.JLabel lblPosition;
-    private javax.swing.JLabel lblReason;
+    private javax.swing.JLabel lblReason1;
     private javax.swing.JPasswordField txtConfirmPasswordSignUp;
+    private javax.swing.JTextField txtContactNumber;
     private javax.swing.JTextField txtEmailSignUp;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JPasswordField txtPasswordSignUp;
     private javax.swing.JTextArea txtarReason;
     // End of variables declaration//GEN-END:variables
