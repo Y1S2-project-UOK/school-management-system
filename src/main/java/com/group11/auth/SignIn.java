@@ -157,7 +157,7 @@ public class SignIn extends javax.swing.JFrame {
                 try {
                     Connection conn = MysqlConnect.ConnectDB();
                     PreparedStatement st = (PreparedStatement) conn
-                            .prepareStatement("Select  aproveStatus from loginUserDetails where Email=? and loginPassword=?");
+                            .prepareStatement("Select  aprove_status from system_users where email=? and login_password=?");
 
                     st.setString(1, email);
                     st.setString(2, pwd);
