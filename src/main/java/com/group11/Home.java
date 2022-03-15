@@ -4,6 +4,8 @@
  */
 package com.group11;
 
+import com.group11.staff.StaffManagement;
+
 /**
  *
  * @author hp
@@ -130,6 +132,8 @@ public class Home extends javax.swing.JFrame {
 
     private void btnStaffManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagementActionPerformed
         dispose();
+        StaffManagement staff = new StaffManagement();
+        staff.setVisible(true);
         
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
