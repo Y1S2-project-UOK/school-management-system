@@ -48,7 +48,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         lblReligion = new javax.swing.JLabel();
         lblBasicSalary = new javax.swing.JLabel();
         txtReligion = new javax.swing.JTextField();
-        txtNationality1 = new javax.swing.JTextField();
+        txtNationality = new javax.swing.JTextField();
         dpDateOfBirth = new org.jdesktop.swingx.JXDatePicker();
         txtBasicSalary = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
@@ -118,6 +118,11 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         btnAdd.setText("Add");
 
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,7 +168,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
                                     .addGap(32, 32, 32)
                                     .addComponent(rdbtnFemale))
                                 .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                .addComponent(txtNationality1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                .addComponent(txtNationality, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                                 .addComponent(txtReligion, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                                 .addComponent(dpDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtBasicSalary, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))))
@@ -201,7 +206,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNationalilty, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNationality1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblReligion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,6 +235,20 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         StaffManagement staff = new StaffManagement();
         staff.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtRegNo.setText(null);
+        txtName.setText(null);
+        txtNIC.setText(null);
+        txtPosition.setText(null);
+        txtEmail.setText(null);
+        rdbtnMale.setSelected(false);
+        rdbtnFemale.setSelected(false);
+        txtNationality.setText(null);
+        txtReligion.setText(null);
+        dpDateOfBirth.setDate(null);
+        txtBasicSalary.setText(null);
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,7 +309,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNIC;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtNationality1;
+    private javax.swing.JTextField txtNationality;
     private javax.swing.JTextField txtPosition;
     private javax.swing.JTextField txtRegNo;
     private javax.swing.JTextField txtReligion;

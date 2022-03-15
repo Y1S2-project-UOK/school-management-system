@@ -74,7 +74,7 @@
                                   <Component id="rdbtnFemale" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtEmail" pref="239" max="32767" attributes="0"/>
-                              <Component id="txtNationality1" alignment="0" pref="239" max="32767" attributes="0"/>
+                              <Component id="txtNationality" alignment="0" pref="239" max="32767" attributes="0"/>
                               <Component id="txtReligion" pref="239" max="32767" attributes="0"/>
                               <Component id="dpDateOfBirth" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtBasicSalary" alignment="0" pref="239" max="32767" attributes="0"/>
@@ -124,7 +124,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNationalilty" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="txtNationality1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="txtNationality" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -278,7 +278,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtReligion">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNationality1">
+    <Component class="javax.swing.JTextField" name="txtNationality">
     </Component>
     <Component class="org.jdesktop.swingx.JXDatePicker" name="dpDateOfBirth">
     </Component>
@@ -293,6 +293,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
