@@ -242,8 +242,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         txtNIC.setText(null);
         txtPosition.setText(null);
         txtEmail.setText(null);
-        rdbtnMale.setSelected(false);
-        rdbtnFemale.setSelected(false);
+        brnGrpGender.clearSelection();
         txtNationality.setText(null);
         txtReligion.setText(null);
         dpDateOfBirth.setDate(null);
