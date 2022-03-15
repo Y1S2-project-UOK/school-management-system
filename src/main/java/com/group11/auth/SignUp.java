@@ -210,8 +210,8 @@ public class SignUp extends javax.swing.JFrame {
                 //sava data to database
                 try {
                     Connection conn = MysqlConnect.ConnectDB();
-                    String query = " insert into loginUserDetails (Email, fullName, loginPassword,position, reasonToJoin, aproveStatus)"
-                    + " values (?, ?, ?, ?, ?,?)";
+                    String query = " insert into system_users (full_name, email, login_password, position, reason_to_join, contact_no, aprove_status)"
+                    + " values (?, ?, ?, ?, ?,?, ?)";
 
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
                     preparedStmt.setString(1, email);
