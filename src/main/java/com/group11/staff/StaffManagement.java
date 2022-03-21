@@ -96,8 +96,18 @@ public class StaffManagement extends javax.swing.JFrame {
         );
 
         btnStaffAttendance.setText("Staff Attendance");
+        btnStaffAttendance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStaffAttendanceActionPerformed(evt);
+            }
+        });
 
         btnEditStaffMemberDetails.setText("Edit Staff Member Details");
+        btnEditStaffMemberDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditStaffMemberDetailsActionPerformed(evt);
+            }
+        });
 
         btnAddNewStaffMember.setText("Add New Staff Member");
         btnAddNewStaffMember.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +117,11 @@ public class StaffManagement extends javax.swing.JFrame {
         });
 
         btnStaffResignation.setText("Staff Resignation");
+        btnStaffResignation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStaffResignationActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,6 +170,24 @@ public class StaffManagement extends javax.swing.JFrame {
         AddNewStaffMember add = new AddNewStaffMember();
         add.setVisible(true);
     }//GEN-LAST:event_btnAddNewStaffMemberActionPerformed
+
+    private void btnStaffAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffAttendanceActionPerformed
+        dispose();
+        StaffAttendance attendance = new StaffAttendance();
+        attendance.setVisible(true);
+    }//GEN-LAST:event_btnStaffAttendanceActionPerformed
+
+    private void btnEditStaffMemberDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStaffMemberDetailsActionPerformed
+        dispose();
+        EditStaffMemberDetails editDetails = new EditStaffMemberDetails();
+        editDetails.setVisible(true);
+    }//GEN-LAST:event_btnEditStaffMemberDetailsActionPerformed
+
+    private void btnStaffResignationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffResignationActionPerformed
+        dispose();
+        StaffResignation resignation = new StaffResignation();
+        resignation.setVisible(true);
+    }//GEN-LAST:event_btnStaffResignationActionPerformed
 
     /**
      * @param args the command line arguments
