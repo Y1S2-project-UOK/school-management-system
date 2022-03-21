@@ -13,6 +13,7 @@ public class AddNewStaffMember extends javax.swing.JFrame {
     /**
      * Creates new form AddNewStaffMember
      */
+   
     public AddNewStaffMember() {
         initComponents();
     }
@@ -116,6 +117,11 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         lblBasicSalary.setText("Basic Salary");
 
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +254,27 @@ public class AddNewStaffMember extends javax.swing.JFrame {
         dpDateOfBirth.setDate(null);
         txtBasicSalary.setText(null);
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if(evt.getSource() == btnAdd) {
+            String regNumber = txtRegNo.getText();
+            String name = txtName.getText();
+            String NIC = txtNIC.getText();
+            String position = txtPosition.getText();
+            String email = txtEmail.getText();
+            String gender;
+            if(rdbtnMale.isSelected()) 
+                gender = "Male";
+            else if(rdbtnFemale.isSelected())
+                gender = "Female";
+            String nationality = txtNationality.getText();
+            String religion = txtReligion.getText();
+            String dateOfBirth = String.valueOf(dpDateOfBirth.getDate());
+            String basicSalary = txtBasicSalary.getText();
+            
+            //check if all the 
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments

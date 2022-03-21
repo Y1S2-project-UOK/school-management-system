@@ -2,22 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.group11;
+package com.group11.users;
 
-import com.group11.staff.StaffManagement;
-import com.group11.student.StudentManagement;
-import com.group11.users.UserManagement;
+import com.group11.Home;
 
 /**
  *
  * @author hp
  */
-public class Home extends javax.swing.JFrame {
+public class UserManagement extends javax.swing.JFrame {
 
     /**
-     * Creates new form Home
+     * Creates new form UserManagement
      */
-    public Home() {
+    public UserManagement() {
         initComponents();
     }
 
@@ -30,19 +28,22 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblUserImage = new javax.swing.JLabel();
         btnUserManagement = new javax.swing.JButton();
         btnStaffManagement = new javax.swing.JButton();
-        btnStudentManagement1 = new javax.swing.JButton();
+        btnStudentManagement = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        btnDeleteUser = new javax.swing.JButton();
+        btnAddNewUser1 = new javax.swing.JButton();
+        btnEditUserDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Image of user");
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        lblUserImage.setText("Image of user");
 
         btnUserManagement.setText("User Management");
         btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
@@ -58,10 +59,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnStudentManagement1.setText("Student Management");
-        btnStudentManagement1.addActionListener(new java.awt.event.ActionListener() {
+        btnStudentManagement.setText("Student Management");
+        btnStudentManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStudentManagement1ActionPerformed(evt);
+                btnStudentManagementActionPerformed(evt);
             }
         });
 
@@ -75,7 +76,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblUserImage, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(btnSignOut)))
@@ -84,30 +85,45 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUserManagement, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStudentManagement1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStudentManagement, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnStaffManagement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblUserImage, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addComponent(btnStaffManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnStudentManagement1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnStudentManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnUserManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(btnSignOut)
                 .addGap(45, 45, 45))
         );
 
-        jLabel2.setText("Welcome User Message");
+        btnDeleteUser.setText("Delete User");
+        btnDeleteUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteUserActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("some shit");
+        btnAddNewUser1.setText("Add New User");
+        btnAddNewUser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNewUser1ActionPerformed(evt);
+            }
+        });
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        btnEditUserDetails.setText("Edit User Details");
+        btnEditUserDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditUserDetailsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,23 +135,33 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(89, 89, 89)
+                        .addComponent(btnDeleteUser, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addComponent(btnAddNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 288, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(271, 271, 271)
+                    .addComponent(btnEditUserDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(299, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAddNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(btnDeleteUser, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(199, 199, 199))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(176, 176, 176)
+                    .addComponent(btnEditUserDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(270, Short.MAX_VALUE)))
         );
 
         pack();
@@ -144,22 +170,39 @@ public class Home extends javax.swing.JFrame {
 
     private void btnStaffManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagementActionPerformed
         dispose();
-        StaffManagement staff = new StaffManagement();
-        staff.setVisible(true);
-        
+        Home home = new Home();
+        home.setVisible(true);
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
-    private void btnStudentManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagement1ActionPerformed
+    private void btnStudentManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagementActionPerformed
         dispose();
-        StudentManagement student = new StudentManagement();
-        student.setVisible(true);
-    }//GEN-LAST:event_btnStudentManagement1ActionPerformed
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_btnStudentManagementActionPerformed
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
         dispose();
-        UserManagement user = new UserManagement();
-        user.setVisible(true);
+        Home home = new Home();
+        home.setVisible(true);
     }//GEN-LAST:event_btnUserManagementActionPerformed
+
+    private void btnAddNewUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewUser1ActionPerformed
+        dispose();
+        AddNewUser addUser = new AddNewUser();
+        addUser.setVisible(true);
+    }//GEN-LAST:event_btnAddNewUser1ActionPerformed
+
+    private void btnEditUserDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditUserDetailsActionPerformed
+        dispose();
+        EditUserDetails editUser = new EditUserDetails();
+        editUser.setVisible(true);
+    }//GEN-LAST:event_btnEditUserDetailsActionPerformed
+
+    private void btnDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteUserActionPerformed
+        dispose();
+        DeleteUser deleteUser = new DeleteUser();
+        deleteUser.setVisible(true);
+    }//GEN-LAST:event_btnDeleteUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,33 +221,34 @@ public class Home extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new UserManagement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddNewUser1;
+    private javax.swing.JButton btnDeleteUser;
+    private javax.swing.JButton btnEditUserDetails;
     private javax.swing.JButton btnSignOut;
     private javax.swing.JButton btnStaffManagement;
-    private javax.swing.JButton btnStudentManagement1;
+    private javax.swing.JButton btnStudentManagement;
     private javax.swing.JButton btnUserManagement;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblUserImage;
     // End of variables declaration//GEN-END:variables
 }

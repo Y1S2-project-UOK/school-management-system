@@ -27,14 +27,24 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnStaffAttendance" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="btnAddNewStaffMember" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="btnEditStaffMemberDetails" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="btnStaffResignation" min="-2" pref="173" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="btnDeleteUser" min="-2" pref="155" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btnAddNewUser1" min="-2" pref="155" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="406" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="288" max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+                  <Component id="btnEditUserDetails" min="-2" pref="155" max="-2" attributes="0"/>
+                  <EmptySpace pref="299" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,16 +52,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnAddNewStaffMember" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnStaffAttendance" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnEditStaffMemberDetails" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnStaffResignation" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+              <Component id="btnAddNewUser1" min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+              <Component id="btnDeleteUser" min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+                  <Component id="btnEditUserDetails" min="-2" pref="54" max="-2" attributes="0"/>
+                  <EmptySpace pref="270" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -101,7 +114,7 @@
                   <Component id="btnStudentManagement" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnUserManagement" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace pref="72" max="32767" attributes="0"/>
                   <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
@@ -118,6 +131,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="User Management"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUserManagementActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnStaffManagement">
           <Properties>
@@ -142,36 +158,28 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnStaffAttendance">
+    <Component class="javax.swing.JButton" name="btnDeleteUser">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Staff Attendance"/>
+        <Property name="text" type="java.lang.String" value="Delete User"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStaffAttendanceActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteUserActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEditStaffMemberDetails">
+    <Component class="javax.swing.JButton" name="btnAddNewUser1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Edit Staff Member Details"/>
+        <Property name="text" type="java.lang.String" value="Add New User"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditStaffMemberDetailsActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddNewUser1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAddNewStaffMember">
+    <Component class="javax.swing.JButton" name="btnEditUserDetails">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add New Staff Member"/>
+        <Property name="text" type="java.lang.String" value="Edit User Details"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddNewStaffMemberActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnStaffResignation">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Staff Resignation"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStaffResignationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditUserDetailsActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
