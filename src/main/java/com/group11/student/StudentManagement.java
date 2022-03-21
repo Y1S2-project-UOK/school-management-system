@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.group11.staff;
+package com.group11.student;
 
 import com.group11.Home;
-import com.group11.student.StudentManagement;
+import com.group11.staff.AddNewStaffMember;
 
 /**
  *
  * @author hp
  */
-public class StaffManagement extends javax.swing.JFrame {
+public class StudentManagement extends javax.swing.JFrame {
 
     /**
-     * Creates new form StaffManagement
+     * Creates new form StudentManagement
      */
-    public StaffManagement() {
+    public StudentManagement() {
         initComponents();
     }
 
@@ -29,25 +29,28 @@ public class StaffManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         lblUserImage = new javax.swing.JLabel();
         btnUserManagement = new javax.swing.JButton();
         btnStaffManagement = new javax.swing.JButton();
         btnStudentManagement = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
-        btnStaffAttendance = new javax.swing.JButton();
-        btnEditStaffMemberDetails = new javax.swing.JButton();
-        btnAddNewStaffMember = new javax.swing.JButton();
-        btnStaffResignation = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnStudentAttendance = new javax.swing.JButton();
+        btnAddNewStudent = new javax.swing.JButton();
+        btnEditStudentDetails = new javax.swing.JButton();
+        btnStudentResignation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         lblUserImage.setText("Image of user");
 
         btnUserManagement.setText("User Management");
+        btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserManagementActionPerformed(evt);
+            }
+        });
 
         btnStaffManagement.setText("Staff Management");
         btnStaffManagement.addActionListener(new java.awt.event.ActionListener() {
@@ -96,36 +99,38 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addComponent(btnStudentManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnUserManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(btnSignOut)
                 .addGap(45, 45, 45))
         );
 
-        btnStaffAttendance.setText("Staff Attendance");
-        btnStaffAttendance.addActionListener(new java.awt.event.ActionListener() {
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        btnStudentAttendance.setText("Student Attendance");
+        btnStudentAttendance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStaffAttendanceActionPerformed(evt);
+                btnStudentAttendanceActionPerformed(evt);
             }
         });
 
-        btnEditStaffMemberDetails.setText("Edit Staff Member Details");
-        btnEditStaffMemberDetails.addActionListener(new java.awt.event.ActionListener() {
+        btnAddNewStudent.setText("Add New Student");
+        btnAddNewStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditStaffMemberDetailsActionPerformed(evt);
+                btnAddNewStudentActionPerformed(evt);
             }
         });
 
-        btnAddNewStaffMember.setText("Add New Staff Member");
-        btnAddNewStaffMember.addActionListener(new java.awt.event.ActionListener() {
+        btnEditStudentDetails.setText("Edit Student Details");
+        btnEditStudentDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddNewStaffMemberActionPerformed(evt);
+                btnEditStudentDetailsActionPerformed(evt);
             }
         });
 
-        btnStaffResignation.setText("Staff Resignation");
-        btnStaffResignation.addActionListener(new java.awt.event.ActionListener() {
+        btnStudentResignation.setText("Student Resignation");
+        btnStudentResignation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStaffResignationActionPerformed(evt);
+                btnStudentResignationActionPerformed(evt);
             }
         });
 
@@ -137,28 +142,28 @@ public class StaffManagement extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnStaffAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddNewStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditStaffMemberDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnStaffResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEditStudentDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddNewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 393, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAddNewStaffMember, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(btnAddNewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEditStudentDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnStaffAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEditStaffMemberDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnStaffResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
+                .addComponent(btnStudentAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnStudentResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,35 +176,41 @@ public class StaffManagement extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
-    private void btnAddNewStaffMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewStaffMemberActionPerformed
+    private void btnStudentAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentAttendanceActionPerformed
         dispose();
-        AddNewStaffMember add = new AddNewStaffMember();
-        add.setVisible(true);
-    }//GEN-LAST:event_btnAddNewStaffMemberActionPerformed
+        StudentAttendance studentAttendance = new StudentAttendance();
+        studentAttendance.setVisible(true);
+    }//GEN-LAST:event_btnStudentAttendanceActionPerformed
 
-    private void btnStaffAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffAttendanceActionPerformed
+    private void btnAddNewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewStudentActionPerformed
         dispose();
-        StaffAttendance attendance = new StaffAttendance();
-        attendance.setVisible(true);
-    }//GEN-LAST:event_btnStaffAttendanceActionPerformed
+        AddNewStudent addStudent = new AddNewStudent();
+        addStudent.setVisible(true);
+    }//GEN-LAST:event_btnAddNewStudentActionPerformed
 
-    private void btnEditStaffMemberDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStaffMemberDetailsActionPerformed
+    private void btnEditStudentDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStudentDetailsActionPerformed
         dispose();
-        EditStaffMemberDetails editDetails = new EditStaffMemberDetails();
-        editDetails.setVisible(true);
-    }//GEN-LAST:event_btnEditStaffMemberDetailsActionPerformed
-
-    private void btnStaffResignationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffResignationActionPerformed
-        dispose();
-        StaffResignation resignation = new StaffResignation();
-        resignation.setVisible(true);
-    }//GEN-LAST:event_btnStaffResignationActionPerformed
+        EditStudentDetails editStudent = new EditStudentDetails();
+        editStudent.setVisible(true);
+    }//GEN-LAST:event_btnEditStudentDetailsActionPerformed
 
     private void btnStudentManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagementActionPerformed
         dispose();
-        StudentManagement student = new StudentManagement();
-        student.setVisible(true);
+        Home home = new Home();
+        home.setVisible(true);
     }//GEN-LAST:event_btnStudentManagementActionPerformed
+
+    private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
+        dispose();
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_btnUserManagementActionPerformed
+
+    private void btnStudentResignationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentResignationActionPerformed
+        dispose();
+        StudentResignation studentResignation = new StudentResignation();
+        studentResignation.setVisible(true);
+    }//GEN-LAST:event_btnStudentResignationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,32 +229,32 @@ public class StaffManagement extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StaffManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StaffManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StaffManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StaffManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StaffManagement().setVisible(true);
+                new StudentManagement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddNewStaffMember;
-    private javax.swing.JButton btnEditStaffMemberDetails;
+    private javax.swing.JButton btnAddNewStudent;
+    private javax.swing.JButton btnEditStudentDetails;
     private javax.swing.JButton btnSignOut;
-    private javax.swing.JButton btnStaffAttendance;
     private javax.swing.JButton btnStaffManagement;
-    private javax.swing.JButton btnStaffResignation;
+    private javax.swing.JButton btnStudentAttendance;
     private javax.swing.JButton btnStudentManagement;
+    private javax.swing.JButton btnStudentResignation;
     private javax.swing.JButton btnUserManagement;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
