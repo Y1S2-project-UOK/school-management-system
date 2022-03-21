@@ -4,7 +4,6 @@
  */
 package com.group11.auth;
 
-import com.group11.Home;
 import com.group11.config.MysqlConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
