@@ -227,7 +227,7 @@ public class StaffManagement extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Basic Information");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Sem-02\\Assignments and Practicals\\Database Design and Development\\Project\\Project\\school-management-system\\src\\main\\java\\Images\\Staff profile.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Staff profile.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -356,8 +356,8 @@ public class StaffManagement extends javax.swing.JFrame {
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
         dispose();
-        UserManagement user = new UserManagement();
-        user.setVisible(true);
+        //UserManagement user = new UserManagement();
+        //user.setVisible(true);
     }//GEN-LAST:event_btnUserManagementActionPerformed
 
     private void btnStaffManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagementActionPerformed
