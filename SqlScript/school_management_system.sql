@@ -3,11 +3,9 @@
 --
 -- Database: school_management_system
 -- ------------------------------------------------------
-
 --
 --Database creation
 --
-
 DROP DATABASE IF EXISTS school_management_system;
 CREATE DATABASE IF NOT EXISTS school_management_system DEFAULT CHARACTER SET = 'utf8mb4';
 USE school_management_system;
@@ -20,8 +18,7 @@ CREATE TABLE `guardian` (
   `guardian_name` varchar(255) DEFAULT NULL,
   `guardian_phone_no` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`guardian_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `student`
 --
@@ -40,8 +37,7 @@ CREATE TABLE `student` (
   PRIMARY KEY (`student_admission_no`),
   KEY `FKhhlsorcfy5xbiu8iwqxwccb6i` (`guardian_id`),
   CONSTRAINT `FKhhlsorcfy5xbiu8iwqxwccb6i` FOREIGN KEY (`guardian_id`) REFERENCES `guardian` (`guardian_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `subjects`
 --
@@ -50,8 +46,7 @@ CREATE TABLE `subjects` (
   `subject_code` varchar(255) NOT NULL,
   `subject_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`subject_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `student_subject`
 --
@@ -63,8 +58,7 @@ CREATE TABLE `student_subject` (
   KEY `FKigo5s7fb9n9kquh6csq7bs9iw` (`student_admission_no`),
   CONSTRAINT `FKfp0ct4bl78p0j52es99pbywbf` FOREIGN KEY (`subject_code`) REFERENCES `subjects` (`subject_code`),
   CONSTRAINT `FKigo5s7fb9n9kquh6csq7bs9iw` FOREIGN KEY (`student_admission_no`) REFERENCES `student` (`student_admission_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `exam`
 --
@@ -73,8 +67,7 @@ CREATE TABLE `exam` (
   `exam_code` varchar(255) NOT NULL,
   `exam_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`exam_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `marks`
 --
@@ -91,8 +84,7 @@ CREATE TABLE `marks` (
   CONSTRAINT `FK25ot1oj90wvwny5cnjs95sv32` FOREIGN KEY (`exam_code`) REFERENCES `exam` (`exam_code`),
   CONSTRAINT `FK8ytykn9am9p7w1py2bj7i660l` FOREIGN KEY (`student_admission_no`) REFERENCES `student` (`student_admission_no`),
   CONSTRAINT `FKjnc40f5aqabqf18qhpwjukw2b` FOREIGN KEY (`subject_code`) REFERENCES `subjects` (`subject_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `teacher`
 --
@@ -109,8 +101,7 @@ CREATE TABLE `teacher` (
   `teacher_password` varchar(255) DEFAULT NULL,
   `teacher_religion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`teacher_reg_no`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `teacher_subject`
 --
@@ -122,34 +113,32 @@ CREATE TABLE `teacher_subject` (
   KEY `FKmjbbt4suts76tfa8covbjyham` (`subject_code`),
   CONSTRAINT `FKj53ftlfwqomtf5ollhxs7a3gb` FOREIGN KEY (`teacher_reg_no`) REFERENCES `teacher` (`teacher_reg_no`),
   CONSTRAINT `FKmjbbt4suts76tfa8covbjyham` FOREIGN KEY (`subject_code`) REFERENCES `subjects` (`subject_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `unacademic_staff`
 --
 DROP TABLE IF EXISTS `unacademic_staff`;
 CREATE TABLE `unacademic_staff` (
   `unacademic_staff_reg_no` varchar(255) NOT NULL,
-  `unacademic_staff_basic_salary` float DEFAULT NULL,
-  `unacademic_staff_date_of_birth` date DEFAULT NULL,
+  `unacademic_staff_name` varchar(255) DEFAULT NULL,
   `unacademic_staff_email` varchar(255) DEFAULT NULL,
+  `unacademic_staff_date_of_birth` date DEFAULT NULL,
   `unacademic_staff_gender` varchar(255) DEFAULT NULL,
   `unacademic_staff_nic` varchar(255) DEFAULT NULL,
-  `unacademic_staff_name` varchar(255) DEFAULT NULL,
   `unacademic_staff_nationality` varchar(255) DEFAULT NULL,
   `unacademic_staff_position` varchar(255) DEFAULT NULL,
   `unacademic_staff_religion` varchar(255) DEFAULT NULL,
+  `unacademic_staff_basic_salary` float DEFAULT NULL,
   PRIMARY KEY (`unacademic_staff_reg_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `staff_leave`
 --
 DROP TABLE IF EXISTS `staff_leave`;
 CREATE TABLE `staff_leave` (
   `leave_id` int AUTO_INCREMENT,
-  `leave_end_date` date DEFAULT NULL,
   `leave_start_date` date DEFAULT NULL,
+  `leave_end_date` date DEFAULT NULL,
   `leave_type` varchar(255) DEFAULT NULL,
   `reason` varchar(255) DEFAULT NULL,
   `unacademic_staff_reg_no` varchar(255) DEFAULT NULL,
@@ -159,23 +148,21 @@ CREATE TABLE `staff_leave` (
   KEY `FK9avbd4knh0acduewmtw1wam8l` (`unacademic_staff_reg_no`),
   CONSTRAINT `FK9avbd4knh0acduewmtw1wam8l` FOREIGN KEY (`unacademic_staff_reg_no`) REFERENCES `unacademic_staff` (`unacademic_staff_reg_no`),
   CONSTRAINT `FKbtxh6jq4yh60jhy2gtokgb078` FOREIGN KEY (`teacher_reg_no`) REFERENCES `teacher` (`teacher_reg_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `system_users`
 --
 DROP TABLE IF EXISTS `system_users`;
 CREATE TABLE `system_users` (
   `email` varchar(255) NOT NULL,
+  `login_password` varchar(255) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
   `aprove_status` int DEFAULT 0,
   `contact_no` varchar(10) NOT NULL,
-  `full_name` varchar(255) NOT NULL,
-  `login_password` varchar(255) NOT NULL,
   `position` varchar(255) NOT NULL,
   `reason_to_join` varchar(255) NOT NULL,
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 --
 -- Table structure for table `announcement`
 --
@@ -186,6 +173,6 @@ CREATE TABLE `announcement` (
   `publish_date` date NOT NULL,
   `publisher_name` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `Publisher` varchar(255) foreign key references `system_users`(`full_name`),
   PRIMARY KEY (`announcement_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
