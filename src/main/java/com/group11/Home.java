@@ -4,10 +4,6 @@
  */
 package com.group11;
 
-import com.group11.staff.StaffManagement;
-import com.group11.student.StudentManagement;
-import com.group11.users.UserManagement;
-
 /**
  *
  * @author hp
@@ -280,22 +276,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnStudentManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagement1ActionPerformed
-        dispose();
-        StudentManagement student = new StudentManagement();
-        student.setVisible(true);
+
     }//GEN-LAST:event_btnStudentManagement1ActionPerformed
 
     private void btnStaffManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagementActionPerformed
-        dispose();
-        StaffManagement staff = new StaffManagement();
-        staff.setVisible(true);
+
 
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
-        dispose();
-        UserManagement user = new UserManagement();
-        user.setVisible(true);
+
     }//GEN-LAST:event_btnUserManagementActionPerformed
 
     /**
