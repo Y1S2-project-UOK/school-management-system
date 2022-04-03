@@ -173,6 +173,5 @@ CREATE TABLE `announcement` (
   `publish_date` date NOT NULL,
   `publisher_name` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `Publisher` varchar(255) foreign key references `system_users`(`full_name`),
   PRIMARY KEY (`announcement_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
