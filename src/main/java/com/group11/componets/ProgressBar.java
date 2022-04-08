@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.group11.auth;
+package com.group11.componets;
 
 import com.group11.Home;
 import java.util.logging.Level;
@@ -34,9 +34,7 @@ public class ProgressBar extends javax.swing.JFrame {
                     }
                 }
                 
-                dispose();
-                Home home = new Home();
-                home.setVisible(true);
+               dispose();
             }
             
         });
