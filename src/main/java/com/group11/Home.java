@@ -5,6 +5,7 @@
 package com.group11;
 
 import com.group11.auth.SignIn;
+import com.group11.teacher.TeacherHome;
 
 /**
  *
@@ -190,7 +191,9 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStaffManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagementActionPerformed
-
+        dispose();
+        TeacherHome teacherHome = new TeacherHome();
+        teacherHome.setVisible(true);
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
     private void btnStudentManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagement1ActionPerformed
