@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 import com.group11.config.MysqlConnect;
+import com.mysql.cj.jdbc.CallableStatement;
 
 public class User {
     public boolean createUser(String fullName, String email, String pwd, String positionSelection, String reasonToJoin,
@@ -37,12 +38,13 @@ public class User {
     public boolean validateUser(String email, String pwd) {
         try {
             Connection conn = MysqlConnect.ConnectDB();
-            PreparedStatement st = (PreparedStatement) conn
-                    .prepareStatement("Select  aprove_status from system_users where email=? and login_password=?");
 
-            st.setString(1, email);
-            st.setString(2, pwd);
-            ResultSet rs = st.executeQuery();
+            String query = "{CALL get_user_status_by_email_and_password(?,?)}";
+            CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
+            stmt.setString(1, email);
+            stmt.setString(2, pwd);
+
+            ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 // check user approveStatus
                 if (rs.getInt(1) == 1) {
