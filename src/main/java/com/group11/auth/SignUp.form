@@ -33,24 +33,17 @@
                   <Group type="102" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cmbxPosition" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="btnClearSignUp" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnSignUp" min="-2" pref="108" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtName1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtContactNumber" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane2" alignment="1" pref="625" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnClearSignUp" min="-2" pref="98" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnSignUp" min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="txtStaffId" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPasswordSignUp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="1" pref="625" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -66,20 +59,14 @@
           <Component id="jPanel1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-              <Component id="txtName1" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="txtStaffId" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="txtEmailSignUp" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="txtPasswordSignUp" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txtConfirmPasswordSignUp" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txtContactNumber" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="cmbxPosition" min="-2" pref="27" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="63" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnClearSignUp" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="btnSignUp" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
@@ -92,29 +79,9 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="txtContactNumber">
-    </Component>
     <Component class="javax.swing.JTextField" name="txtEmailSignUp">
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtPasswordSignUp">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="txtConfirmPasswordSignUp">
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cmbxPosition">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="...."/>
-            <StringItem index="1" value="Staff Member"/>
-            <StringItem index="2" value="Teacher"/>
-            <StringItem index="3" value="Student"/>
-            <StringItem index="4" value="Parent"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -182,7 +149,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignInActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtName1">
+    <Component class="javax.swing.JTextField" name="txtStaffId">
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -198,12 +165,9 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblReason1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblPosition" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblContactNumber" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblConfirmPasswordSignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblPasswordSignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblEmailSignUp" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblName" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lblStaffId" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -215,18 +179,12 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="51" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="lblName" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="lblStaffId" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="lblEmailSignUp" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="lblPasswordSignUp" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblConfirmPasswordSignUp" min="-2" pref="36" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblContactNumber" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lblPosition" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="lblReason1" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -246,7 +204,7 @@
             <Property name="text" type="java.lang.String" value="Registration Form"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblName">
+        <Component class="javax.swing.JLabel" name="lblStaffId">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -255,7 +213,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Name :"/>
+            <Property name="text" type="java.lang.String" value="Staff-ID"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblEmailSignUp">
@@ -280,42 +238,6 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Password :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblConfirmPasswordSignUp">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Confirm Password :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblContactNumber">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Contact Number :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblPosition">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Position :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblReason1">

@@ -1,7 +1,6 @@
 package com.group11.auth.db;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
@@ -10,27 +9,28 @@ import com.group11.config.MysqlConnect;
 import com.mysql.cj.jdbc.CallableStatement;
 
 public class User {
-    public boolean createUser(String fullName, String email, String pwd, String positionSelection, String reasonToJoin,
-            String contactNumber, int approveStatus) {
+    public boolean createUser(String staffId, String email, String password,String reasonToJoin) {
         try {
             Connection conn = MysqlConnect.ConnectDB();
-            String query = " insert into system_users (full_name, email, login_password, position, reason_to_join, contact_no, aprove_status)"
-                    + " values (?, ?, ?, ?, ?,?,?)";
-
-            PreparedStatement preparedStmt = conn.prepareStatement(query);
-            preparedStmt.setString(1, fullName);
-            preparedStmt.setString(2, email);
-            preparedStmt.setString(3, pwd);
-            preparedStmt.setString(4, positionSelection);
-            preparedStmt.setString(5, reasonToJoin);
-            preparedStmt.setString(6, contactNumber);
-            preparedStmt.setInt(7, 0);
-
-            preparedStmt.execute();
+            //validate staff member 
+            String query = "{CALL auth_staff_member(?,?,?)}";
+            CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
+            stmt.setString(1, staffId);
+            stmt.setString(2, email);
+            stmt.setString(3, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                   //adding new user as system user
+                   String newQuery = "{CALL add_system_user(?,?)}";
+                   CallableStatement newStmt = (CallableStatement) conn.prepareCall(newQuery);
+                   newStmt.setString(1, reasonToJoin);
+                   newStmt.setString(2, staffId);
+                   newStmt.execute();
+            }
             conn.close();
             return true;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "", approveStatus);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "", 1);
             return false;
         }
     }
