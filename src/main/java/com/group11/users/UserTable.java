@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package users;
+package com.group11.users;
 
 import com.group11.Home;
+import com.group11.users.db.SystemUser;
+
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import users.db.SystemUser;
 
 /**
  *

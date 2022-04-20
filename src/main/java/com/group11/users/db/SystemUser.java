@@ -1,4 +1,4 @@
-package users.db;
+package com.group11.users.db;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
