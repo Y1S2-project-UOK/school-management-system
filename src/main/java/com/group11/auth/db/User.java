@@ -13,7 +13,7 @@ public class User {
         try {
             Connection conn = MysqlConnect.ConnectDB();
             //validate staff member 
-            String query = "{CALL auth_staff_member(?,?,?)}";
+            String query = "CALL auth_staff_member(?,?,?);";
             CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
             stmt.setString(1, staffId);
             stmt.setString(2, email);
@@ -21,7 +21,7 @@ public class User {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                    //adding new user as system user
-                   String newQuery = "{CALL add_system_user(?,?)}";
+                   String newQuery = "CALL add_system_user(?,?);";
                    CallableStatement newStmt = (CallableStatement) conn.prepareCall(newQuery);
                    newStmt.setString(1, reasonToJoin);
                    newStmt.setString(2, staffId);
