@@ -7,6 +7,8 @@ package com.group11;
 import com.group11.auth.SignIn;
 import com.group11.teacher.TeacherDetails;
 
+import users.UserTable;
+
 /**
  *
  * @author ishan
@@ -201,7 +203,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStudentManagement1ActionPerformed
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
-
+        dispose();
+        new UserTable().setVisible(true);
     }//GEN-LAST:event_btnUserManagementActionPerformed
 
     private void btnStaffManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagement1ActionPerformed
