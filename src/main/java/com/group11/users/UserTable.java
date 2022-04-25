@@ -64,6 +64,11 @@ public class UserTable extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUsersMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblUsers);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -115,6 +120,21 @@ public class UserTable extends javax.swing.JFrame {
        dispose();
        new Home().setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void tblUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsersMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tblUsers.getModel();
+        int selectedRowIndex = tblUsers.getSelectedRow();
+        new UserDetails(
+                model.getValueAt(selectedRowIndex, 0).toString(),
+                model.getValueAt(selectedRowIndex, 1).toString(),
+                model.getValueAt(selectedRowIndex, 2).toString(),
+                Integer.parseInt(model.getValueAt(selectedRowIndex, 4).toString()),
+                model.getValueAt(selectedRowIndex, 3).toString()
+                ).setVisible(true);
+        
+        // btnBack.setEnabled(false);
+       
+    }//GEN-LAST:event_tblUsersMouseClicked
 
     private void loadTableData(){
          //load data to the table 
