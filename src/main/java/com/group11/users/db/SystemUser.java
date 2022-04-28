@@ -86,6 +86,25 @@ public class SystemUser {
         }
     }
 
+    public static boolean updateApproveStatus(int approveStatus,String staffRegNo) {
+        try {
+            Connection conn = MysqlConnect.ConnectDB();
+
+            String query = "{CALL update_system_user_satatus(?,?)}";
+            CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
+            stmt.setInt(1, approveStatus);
+            stmt.setString(2, staffRegNo);
+
+            stmt.executeQuery();
+            return true;
+
+        } catch (Exception e) {
+            System.out.println("check");
+            JOptionPane.showMessageDialog(null, e.getMessage(), "", 0);
+            return false;
+        }
+    }
+
     // public static void main(String[] args) {
     //     SystemUser.getSystemUserList();
     // }

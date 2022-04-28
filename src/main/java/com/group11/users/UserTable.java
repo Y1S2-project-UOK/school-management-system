@@ -122,6 +122,7 @@ public class UserTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tblUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsersMouseClicked
+        
         DefaultTableModel model = (DefaultTableModel) tblUsers.getModel();
         int selectedRowIndex = tblUsers.getSelectedRow();
         new UserDetails(
@@ -131,7 +132,6 @@ public class UserTable extends javax.swing.JFrame {
                 Integer.parseInt(model.getValueAt(selectedRowIndex, 4).toString()),
                 model.getValueAt(selectedRowIndex, 3).toString()
                 ).setVisible(true);
-        
         // btnBack.setEnabled(false);
        
     }//GEN-LAST:event_tblUsersMouseClicked

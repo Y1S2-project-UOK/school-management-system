@@ -4,6 +4,10 @@
  */
 package com.group11.users;
 
+import javax.swing.JOptionPane;
+
+import com.group11.users.db.SystemUser;
+
 /**
  *
  * @author ishan
@@ -25,10 +29,10 @@ public class UserDetails extends javax.swing.JFrame {
         txtbxReasonToJoin.setText(reasonToJoin);
         if(aproveStatus==1){
             cmAproveStatus.setSelectedIndex(1);
+            btnApproveUser.setEnabled(false);
         }else{
             cmAproveStatus.setSelectedIndex(0);
         }
-        disableEnableAllTxtBox(true);
     }
 
     /**
@@ -54,8 +58,7 @@ public class UserDetails extends javax.swing.JFrame {
         lblReasonToJoin = new javax.swing.JLabel();
         cmAproveStatus = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        btnEdit = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
+        btnApproveUser = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -63,11 +66,16 @@ public class UserDetails extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setResizable(false);
 
+        txtbxReasonToJoin.setEditable(false);
         txtbxReasonToJoin.setColumns(20);
         txtbxReasonToJoin.setRows(5);
         jScrollPane1.setViewportView(txtbxReasonToJoin);
 
-        txtStaffRegNo.setEnabled(false);
+        txtStaffRegNo.setEditable(false);
+
+        txtStaffName.setEditable(false);
+
+        txtStaffEmail.setEditable(false);
 
         lblStaffRegNo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblStaffRegNo.setText("staff_reg_no");
@@ -85,6 +93,7 @@ public class UserDetails extends javax.swing.JFrame {
         lblReasonToJoin.setText("reason_to_join");
 
         cmAproveStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FALSE", "TRUE" }));
+        cmAproveStatus.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -143,18 +152,10 @@ public class UserDetails extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("User Details");
 
-        btnEdit.setText("Edit");
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+        btnApproveUser.setText("Approve User");
+        btnApproveUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
-            }
-        });
-
-        btnUpdate.setText("Update");
-        btnUpdate.setEnabled(false);
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
+                btnApproveUserActionPerformed(evt);
             }
         });
 
@@ -170,10 +171,8 @@ public class UserDetails extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(151, 151, 151)
+                        .addComponent(btnApproveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -183,33 +182,23 @@ public class UserDetails extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(26, 26, 26)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnApproveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        disableEnableAllTxtBox(false);
-        btnUpdate.setEnabled(true);
-        btnEdit.setEnabled(false);
-    }//GEN-LAST:event_btnEditActionPerformed
+    private void btnApproveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveUserActionPerformed
+        SystemUser.updateApproveStatus(1, txtStaffRegNo.getText());
+        JOptionPane.showMessageDialog(null, "successful", "", 0);
+        dispose();
+        new UserTable().setVisible(true);
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnApproveUserActionPerformed
 
-    private void disableEnableAllTxtBox(boolean currentState){
-        txtStaffName.setEnabled(!currentState);
-        txtStaffEmail.setEnabled(!currentState);
-        txtbxReasonToJoin.setEnabled(!currentState);
-        cmAproveStatus.setEnabled(!currentState);
-    }
     /**
      * @param args the command line arguments
      */
@@ -246,8 +235,7 @@ public class UserDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnApproveUser;
     private javax.swing.JComboBox<String> cmAproveStatus;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel7;
