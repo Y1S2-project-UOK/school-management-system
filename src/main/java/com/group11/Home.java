@@ -7,6 +7,7 @@ package com.group11;
 import com.group11.auth.SignIn;
 import com.group11.teacher.TeacherDetails;
 import com.group11.users.UserTable;
+import staff.StaffDetails;
 
 /**
  *
@@ -207,7 +208,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUserManagementActionPerformed
 
     private void btnStaffManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffManagement1ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new StaffDetails().setVisible(true);
     }//GEN-LAST:event_btnStaffManagement1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
