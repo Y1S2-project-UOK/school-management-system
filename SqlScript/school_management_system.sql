@@ -58,9 +58,11 @@ CREATE TABLE `system_user` (
 DROP TABLE IF EXISTS `announcement`;
 CREATE TABLE `announcement` (
   `announcement_id` int NOT NULL AUTO_INCREMENT,
-  `details` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `publish_date` date NOT NULL,
   `title` varchar(255) NOT NULL,
+  `venue` varchar(255),
+  `publisher` varchar(255),
   `system_users_id` int NOT NULL,
   PRIMARY KEY (`announcement_id`),
   CONSTRAINT `fk_announcement_system_user` FOREIGN KEY (`system_users_id`) REFERENCES `system_user` (`user_id`) ON UPDATE CASCADE
