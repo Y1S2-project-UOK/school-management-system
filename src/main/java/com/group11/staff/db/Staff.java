@@ -29,8 +29,6 @@ public class Staff {
     private String staffPassword;
     private String basicSalary;
 
-    
-
     public Staff(String staffRegNo, String staffName, String staffEmail, String staffDateOfBirth, String staffGender,
             String staffNic, String staffNationality, String staffReligion, String staffPassword, String basicSalary) {
         this.staffRegNo = staffRegNo;
@@ -44,68 +42,88 @@ public class Staff {
         this.staffPassword = staffPassword;
         this.basicSalary = basicSalary;
     }
+
     public String getStaffRegNo() {
         return staffRegNo;
     }
+
     public void setStaffRegNo(String staffRegNo) {
         this.staffRegNo = staffRegNo;
     }
+
     public String getStaffName() {
         return staffName;
     }
+
     public void setStaffName(String staffName) {
         this.staffName = staffName;
     }
+
     public String getStaffEmail() {
         return staffEmail;
     }
+
     public void setStaffEmail(String staffEmail) {
         this.staffEmail = staffEmail;
     }
+
     public String getStaffDateOfBirth() {
         return staffDateOfBirth;
     }
+
     public void setStaffDateOfBirth(String staffDateOfBirth) {
         this.staffDateOfBirth = staffDateOfBirth;
     }
+
     public String getStaffGender() {
         return staffGender;
     }
+
     public void setStaffGender(String staffGender) {
         this.staffGender = staffGender;
     }
+
     public String getStaffNic() {
         return staffNic;
     }
+
     public void setStaffNic(String staffNic) {
         this.staffNic = staffNic;
     }
+
     public String getStaffNationality() {
         return staffNationality;
     }
+
     public void setStaffNationality(String staffNationality) {
         this.staffNationality = staffNationality;
     }
+
     public String getStaffReligion() {
         return staffReligion;
     }
+
     public void setStaffReligion(String staffReligion) {
         this.staffReligion = staffReligion;
     }
+
     public String getStaffPassword() {
         return staffPassword;
     }
+
     public void setStaffPassword(String staffPassword) {
         this.staffPassword = staffPassword;
     }
+
     public String getBasicSalary() {
         return basicSalary;
     }
+
     public void setBasicSalary(String basicSalary) {
         this.basicSalary = basicSalary;
     }
 
-    public static ArrayList<Staff> getStaffList(){
+    public static ArrayList<Staff> getStaffList() {
         ArrayList<Staff> staffList = new ArrayList<Staff>();
         try {
             Connection conn = MysqlConnect.ConnectDB();
@@ -116,7 +134,10 @@ public class Staff {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Staff staffMember = new Staff(rs.getString("staff_reg_no"),rs.getString("staff_name"),rs.getString("staff_email"),rs.getString("staff_date_of_birth"),rs.getString("staff_gender"),rs.getString("staff_nic"),rs.getString("staff_nationality"),rs.getString("staff_religion"),rs.getString("password"),rs.getString("basic_salary"));
+                Staff staffMember = new Staff(rs.getString("staff_reg_no"), rs.getString("staff_name"),
+                        rs.getString("staff_email"), rs.getString("staff_date_of_birth"), rs.getString("staff_gender"),
+                        rs.getString("staff_nic"), rs.getString("staff_nationality"), rs.getString("staff_religion"),
+                        rs.getString("password"), rs.getString("basic_salary"));
                 staffList.add(staffMember);
             }
             return staffList;
@@ -129,8 +150,42 @@ public class Staff {
     }
 
     // public static void main(String[] args) {
-    //   System.out.println(Staff.getStaffList());  
+    // System.out.println(Staff.getStaffList());
     // }
-    
-    
+    public static boolean addStaffMember(
+            String staffNo,
+            String staffName,
+            String StaffEmail,
+            String dob,
+            String nic,
+            String gender,
+            String nationality,
+            String religin,
+            String pwd,
+            double salary
+            ) {
+        try {
+            Connection conn = MysqlConnect.ConnectDB();
+            // validate staff member
+            String query = "CALL add_staff_member(?,?,?,?,?,?,?,?,?,?);";
+            CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
+            stmt.setString(1, staffNo);
+            stmt.setString(2, staffName);
+            stmt.setString(3, StaffEmail);
+            stmt.setString(4, dob);
+            stmt.setString(5, nic);
+            stmt.setString(6, gender);
+            stmt.setString(7, nationality);
+            stmt.setString(8, religin);
+            stmt.setString(9, pwd);
+            stmt.setDouble(10, salary);
+            System.out.println(stmt.execute());
+            conn.close();
+            return true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "", 1);
+            return false;
+        }
+    }
+
 }
