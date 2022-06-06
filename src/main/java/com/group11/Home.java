@@ -5,9 +5,9 @@
 package com.group11;
 
 import com.group11.auth.SignIn;
+import com.group11.staff.StaffDetails;
 import com.group11.teacher.TeacherDetails;
 import com.group11.users.UserTable;
-import staff.StaffDetails;
 
 /**
  *

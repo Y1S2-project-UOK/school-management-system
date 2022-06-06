@@ -6,4 +6,4 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL get_users_table();
+-- CALL get_users_table();
