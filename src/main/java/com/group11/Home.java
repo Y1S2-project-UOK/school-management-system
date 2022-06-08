@@ -16,6 +16,7 @@ import com.mysql.cj.jdbc.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import com.group11.event.EventDetails;
 
 /**
  *
@@ -119,6 +120,11 @@ public class Home extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Events");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         btnSignOut.setBackground(new java.awt.Color(56, 182, 255));
         btnSignOut.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -141,6 +147,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("WISDOM COLLEGE");
 
@@ -190,6 +197,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(20, 70, 137));
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WELCOME");
 
@@ -403,6 +411,12 @@ public class Home extends javax.swing.JFrame {
         dispose();
         new SignIn().setVisible(true);
     }//GEN-LAST:event_btnSignOutActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+        //event student = new EventDetails();
+        new EventDetails().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void updateCountOnHome() {
         try {
