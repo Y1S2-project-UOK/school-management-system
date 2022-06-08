@@ -8,6 +8,9 @@ import com.group11.Student.db.Student;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+
 
 /**
  *
@@ -57,8 +60,8 @@ public class StudentDetails extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudentDetails = new javax.swing.JTable();
         txtPassword = new javax.swing.JPasswordField();
-        dpDateOfBirth = new org.jdesktop.swingx.JXDatePicker();
         btnAdd = new javax.swing.JButton();
+        dpDateOfBirth = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,11 +248,6 @@ public class StudentDetails extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblStudentDetails.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblStudentDetailsMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tblStudentDetails);
 
         btnAdd.setText("Add new Student");
@@ -265,9 +263,9 @@ public class StudentDetails extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(184, 184, 184)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dpDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(dpDateOfBirth))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
@@ -291,8 +289,8 @@ public class StudentDetails extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(dpDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(219, 219, 219)
+                        .addComponent(dpDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213)
                         .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(97, 97, 97))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,11 +305,15 @@ public class StudentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_txtStudentNumberActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        
+        //String datePattern = "yyyy-MM-dd";
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
         String studentNo = txtStudentNumber.getText();
         String studentName = txtName.getText();
         String studentEmail = txtEmail.getText();
-        String dob = dpDateOfBirth.getDate().toString();
+        String dob = dpDateOfBirth.getText();
+        //date dpDateOfBirth.getDate()
+        //String dob = formatter.format(dpDateOfBirth.getDate());
+        System.out.println(dob);
         String gender = null;
         if (rbtnMale.isSelected()) {
             gender = "Male";
@@ -363,10 +365,6 @@ public class StudentDetails extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void tblStudentDetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStudentDetailsMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblStudentDetailsMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -407,7 +405,7 @@ public class StudentDetails extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbxNationality;
     private javax.swing.JComboBox<String> cmbxReligion;
-    private org.jdesktop.swingx.JXDatePicker dpDateOfBirth;
+    private javax.swing.JTextField dpDateOfBirth;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

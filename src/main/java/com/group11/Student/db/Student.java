@@ -127,7 +127,7 @@ public class Student {
         try {
             Connection conn = MysqlConnect.ConnectDB();
 
-            String query = "CALL get_Student_table();";
+            String query = "CALL get_Studend_table();";
             CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
 
             ResultSet rs = stmt.executeQuery();

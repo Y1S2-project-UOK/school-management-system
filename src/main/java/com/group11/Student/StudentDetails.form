@@ -29,9 +29,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtPassword" min="-2" pref="167" max="-2" attributes="0"/>
-                  <Component id="dpDateOfBirth" min="-2" pref="158" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtPassword" pref="167" max="32767" attributes="0"/>
+                  <Component id="dpDateOfBirth" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -63,8 +63,8 @@
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="dpDateOfBirth" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                      <Component id="dpDateOfBirth" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                       <Component id="txtPassword" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
@@ -484,15 +484,10 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblStudentDetailsMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JPasswordField" name="txtPassword">
-    </Component>
-    <Component class="org.jdesktop.swingx.JXDatePicker" name="dpDateOfBirth">
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
@@ -501,6 +496,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dpDateOfBirth">
     </Component>
   </SubComponents>
 </Form>
