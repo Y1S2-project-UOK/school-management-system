@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.group11.staff;
+import com.group11.Home;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,7 @@ public class StaffDetails extends javax.swing.JFrame {
         txtBasicSalary = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtDateOfBirth = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStaffDetails = new javax.swing.JTable();
         btnAddNew = new javax.swing.JButton();
@@ -145,6 +147,14 @@ public class StaffDetails extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Basic Salary");
 
+        jButton1.setText("Back To Home");
+        jButton1.setActionCommand("Back To Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -165,7 +175,7 @@ public class StaffDetails extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addGap(30, 30, 30)
                                 .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 6, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -189,14 +199,21 @@ public class StaffDetails extends javax.swing.JFrame {
                                         .addComponent(txtNic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(20, 20, 20))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -239,7 +256,7 @@ public class StaffDetails extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBasicSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         tblStaffDetails.setModel(new javax.swing.table.DefaultTableModel(
@@ -309,6 +326,12 @@ public class StaffDetails extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       dispose();
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtStaffNumberActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtStaffNumberActionPerformed
         // TODO add your handling code here:
@@ -382,6 +405,16 @@ public class StaffDetails extends javax.swing.JFrame {
                 model.addRow(row);
                 JOptionPane.showMessageDialog(this, "adding successful");
             }
+            
+            txtStaffNumber.setText(null);
+            txtName.setText(null);
+            txtEmail.setText(null);
+            txtDateOfBirth.setText(null);
+            txtNic.setText(null);
+            txtPassword.setText(null);
+            txtBasicSalary.setText(null);
+                    
+            
 
 
         } else {
@@ -461,6 +494,7 @@ public class StaffDetails extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddNew;
     private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
