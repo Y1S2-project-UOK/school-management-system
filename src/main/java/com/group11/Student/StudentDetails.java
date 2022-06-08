@@ -4,6 +4,14 @@
  */
 package com.group11.Student;
 
+import com.group11.Student.db.Student;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+
+
 /**
  *
  * @author User
@@ -15,6 +23,7 @@ public class StudentDetails extends javax.swing.JFrame {
      */
     public StudentDetails() {
         initComponents();
+        loadTableData();
     }
 
     /**
@@ -26,17 +35,17 @@ public class StudentDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtStaffNumber = new javax.swing.JTextField();
+        txtStudentNumber = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        txtPassword = new javax.swing.JPasswordField();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        txtNic = new javax.swing.JTextField();
+        cmbxNationality = new javax.swing.JComboBox<>();
+        cmbxReligion = new javax.swing.JComboBox<>();
+        rbtnMale = new javax.swing.JRadioButton();
+        rbtnFemale = new javax.swing.JRadioButton();
+        txtAddress = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -46,10 +55,13 @@ public class StudentDetails extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtBasicSalary = new javax.swing.JTextField();
+        txtGuradianID = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblStaffDetails = new javax.swing.JTable();
+        tblStudentDetails = new javax.swing.JTable();
+        txtPassword = new javax.swing.JPasswordField();
+        btnAdd = new javax.swing.JButton();
+        dpDateOfBirth = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,26 +72,28 @@ public class StudentDetails extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Student Details");
 
-        txtStaffNumber.addActionListener(new java.awt.event.ActionListener() {
+        txtStudentNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtStaffNumberActionPerformed(evt);
+                txtStudentNumberActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinhala", "Tamil", "Muslim", "Burgher", "Other" }));
-        jComboBox1.setToolTipText("");
+        cmbxNationality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinhala", "Tamil", "Muslim", "Burgher", "Other" }));
+        cmbxNationality.setToolTipText("");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buddhist", "Hindu", "Islam", "Catholic", "Christian", "Other" }));
+        cmbxReligion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buddhist", "Hindu", "Islam", "Catholic", "Christian", "Other" }));
 
-        jRadioButton3.setBackground(new java.awt.Color(20, 70, 137));
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("Male");
+        rbtnMale.setBackground(new java.awt.Color(20, 70, 137));
+        buttonGroup1.add(rbtnMale);
+        rbtnMale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rbtnMale.setForeground(new java.awt.Color(255, 255, 255));
+        rbtnMale.setText("Male");
 
-        jRadioButton4.setBackground(new java.awt.Color(20, 70, 137));
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton4.setText("Female");
+        rbtnFemale.setBackground(new java.awt.Color(20, 70, 137));
+        buttonGroup1.add(rbtnFemale);
+        rbtnFemale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rbtnFemale.setForeground(new java.awt.Color(255, 255, 255));
+        rbtnFemale.setText("Female");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,9 +145,9 @@ public class StudentDetails extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rbtnMale, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rbtnFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -150,17 +164,16 @@ public class StudentDetails extends javax.swing.JFrame {
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBasicSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtPassword)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cmbxReligion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cmbxNationality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtEmail)
                                         .addComponent(txtName)
-                                        .addComponent(txtStaffNumber)
-                                        .addComponent(txtNic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(txtStudentNumber)
+                                        .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(20, 20, 20))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(105, 105, 105)
@@ -174,7 +187,7 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtStaffNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStudentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -189,32 +202,30 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(rbtnMale)
+                    .addComponent(rbtnFemale))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtNic, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbxNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbxReligion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBasicSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        tblStaffDetails.setModel(new javax.swing.table.DefaultTableModel(
+        tblStudentDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -237,27 +248,51 @@ public class StudentDetails extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblStaffDetails);
+        jScrollPane1.setViewportView(tblStudentDetails);
+
+        btnAdd.setText("Add new Student");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(386, 386, 386)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(dpDateOfBirth))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAdd)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 844, Short.MAX_VALUE)))
+                    .addGap(0, 926, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(dpDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -265,9 +300,70 @@ public class StudentDetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtStaffNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStaffNumberActionPerformed
+    private void txtStudentNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudentNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtStaffNumberActionPerformed
+    }//GEN-LAST:event_txtStudentNumberActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        //String datePattern = "yyyy-MM-dd";
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
+        String studentNo = txtStudentNumber.getText();
+        String studentName = txtName.getText();
+        String studentEmail = txtEmail.getText();
+        String dob = dpDateOfBirth.getText();
+        //date dpDateOfBirth.getDate()
+        //String dob = formatter.format(dpDateOfBirth.getDate());
+        System.out.println(dob);
+        String gender = null;
+        if (rbtnMale.isSelected()) {
+            gender = "Male";
+        } else if (rbtnFemale.isSelected()) {
+            gender = "Female";
+        }
+        String address = txtAddress.getText();
+        String nationality = cmbxNationality.getSelectedItem().toString();
+        String religion = cmbxReligion.getSelectedItem().toString();
+        char[] pwdText = txtPassword.getPassword();
+        String pwd = new String(pwdText);
+        String guardianID = txtGuradianID.getText();
+        
+        if(!studentNo.equals("") 
+         || studentName.equals("")
+         || studentEmail.equals("")
+         || dob.equals("")
+         || gender.equals("")
+         || address.equals("")
+         || nationality.equals("")
+         || religion.equals("")
+         || pwd.equals("")
+         || guardianID.equals("")
+        )
+        {
+             boolean status = Student.addStudent(studentNo, gender, address, dob, studentEmail, studentName, nationality,
+                    pwd, religion, guardianID);
+             
+                 if (status) {
+                // add data to table
+                DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
+                Object[] row = new Object[10];
+                row[0] = studentNo;
+                row[1] = studentName;
+                row[2] = studentEmail;
+                row[3] = dob;
+                row[4] = gender;
+                row[5] = address;
+                row[6] = nationality;
+                row[7] = religion;
+                row[8] = pwd;
+                row[9] = guardianID;
+
+                model.addRow(row);
+                JOptionPane.showMessageDialog(this, "adding successful");
+            } 
+        } else {
+            JOptionPane.showMessageDialog(this, "All fields must not empty");
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,8 +401,11 @@ public class StudentDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> cmbxNationality;
+    private javax.swing.JComboBox<String> cmbxReligion;
+    private javax.swing.JTextField dpDateOfBirth;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -319,15 +418,36 @@ public class StudentDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblStaffDetails;
-    private javax.swing.JTextField txtBasicSalary;
+    private javax.swing.JRadioButton rbtnFemale;
+    private javax.swing.JRadioButton rbtnMale;
+    private javax.swing.JTable tblStudentDetails;
+    private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtGuradianID;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtNic;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtStaffNumber;
+    private javax.swing.JTextField txtStudentNumber;
     // End of variables declaration//GEN-END:variables
+
+    private void loadTableData() {
+       
+        // load data to the table
+        ArrayList<Student> studentList = Student.getStudentList();
+        DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
+        Object[] row = new Object[10];
+        for (int i = 0; i < studentList.size(); i++) {
+            row[0] = studentList.get(i).getStudentRegNo() == null ? "-" : studentList.get(i).getStudentRegNo();
+            row[1] = studentList.get(i).getStudentName() == null ? "-" : studentList.get(i).getStudentName();
+            row[2] = studentList.get(i).getStudentEmail() == null ? "-" : studentList.get(i).getStudentEmail();
+            row[3] = studentList.get(i).getStudentDOB() == null ? "-" : studentList.get(i).getStudentDOB();
+            row[4] = studentList.get(i).getStudentGender() == null ? "-" : studentList.get(i).getStudentGender() == null;
+            row[5] = studentList.get(i).getStudentAddress() == null ? "-" : studentList.get(i).getStudentAddress();
+            row[6] = studentList.get(i).getStudentNationality() == null ? "-" : studentList.get(i).getStudentNationality();
+            row[7] = studentList.get(i).getStudentReligion() == null ? "-" : studentList.get(i).getStudentReligion();
+            row[8] = studentList.get(i).getStudentPassword() == null ? "-" : studentList.get(i).getStudentPassword();
+            row[9] = studentList.get(i).getStudentGuardianID() == null ? "-" : studentList.get(i).getStudentGuardianID();
+            model.addRow(row);
+        }
+    }
 }
