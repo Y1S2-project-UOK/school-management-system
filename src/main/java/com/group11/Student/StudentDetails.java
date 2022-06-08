@@ -65,6 +65,7 @@ public class StudentDetails extends javax.swing.JFrame {
         dpDateOfBirth = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        btnUpdateStudent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -279,6 +280,13 @@ public class StudentDetails extends javax.swing.JFrame {
             }
         });
 
+        btnUpdateStudent.setText("Update Student");
+        btnUpdateStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateStudentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -292,7 +300,9 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdd)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnUpdateStudent, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(80, 80, 80)
                         .addComponent(btnClear)
                         .addGap(91, 91, 91)
@@ -312,7 +322,9 @@ public class StudentDetails extends javax.swing.JFrame {
                     .addComponent(btnAdd)
                     .addComponent(btnBack)
                     .addComponent(btnClear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUpdateStudent)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,21 +386,21 @@ public class StudentDetails extends javax.swing.JFrame {
              
                  if (status) {
                 // add data to table
-                DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
-                Object[] row = new Object[10];
-                row[0] = studentNo;
-                row[1] = studentName;
-                row[2] = studentEmail;
-                row[3] = dob;
-                row[4] = gender;
-                row[5] = address;
-                row[6] = nationality;
-                row[7] = religion;
-                row[8] = pwd;
-                row[9] = guardianID;
+                    DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
+                    Object[] row = new Object[10];
+                    row[0] = studentNo;
+                    row[1] = studentName;
+                    row[2] = studentEmail;
+                    row[3] = dob;
+                    row[4] = gender;
+                    row[5] = address;
+                    row[6] = nationality;
+                    row[7] = religion;
+                    row[8] = pwd;
+                    row[9] = guardianID;
 
-                model.addRow(row);
-                JOptionPane.showMessageDialog(this, "adding successful");
+                    model.addRow(row);
+                    JOptionPane.showMessageDialog(this, "adding successful");
             } 
         } else {
             JOptionPane.showMessageDialog(this, "All fields must not empty");
@@ -441,6 +453,54 @@ public class StudentDetails extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnClearActionPerformed
 
+    private void btnUpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStudentActionPerformed
+        String studentNo = txtStudentNumber.getText();
+        String studentName = txtName.getText();
+        String studentEmail = txtEmail.getText();
+        String dob = dpDateOfBirth.getText();
+        //date dpDateOfBirth.getDate()
+        //String dob = formatter.format(dpDateOfBirth.getDate());
+        System.out.println(dob);
+        String gender = null;
+        if (rbtnMale.isSelected()) {
+            gender = "Male";
+        } else if (rbtnFemale.isSelected()) {
+            gender = "Female";
+        }
+        String address = txtAddress.getText();
+        String nationality = cmbxNationality.getSelectedItem().toString();
+        String religion = cmbxReligion.getSelectedItem().toString();
+        char[] pwdText = txtPassword.getPassword();
+        String pwd = new String(pwdText);
+        String guardianID = txtGuradianID.getText();
+        
+        if(!studentNo.equals("") 
+         || studentName.equals("")
+         || studentEmail.equals("")
+         || dob.equals("")
+         || gender.equals("")
+         || address.equals("")
+         || nationality.equals("")
+         || religion.equals("")
+         || pwd.equals("")
+         || guardianID.equals("")
+        )
+        {
+             boolean status = Student.updateStudent(studentNo, gender, address, dob, studentEmail, studentName, nationality,
+                    pwd, religion, guardianID);
+             
+                 if (status) {                   
+                    DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
+                    model.setRowCount(0);
+                    loadTableData();
+                    JOptionPane.showMessageDialog(this, "updating successful");
+                    //loadTableData();
+            } 
+        } else {
+            JOptionPane.showMessageDialog(this, "All fields must not empty");
+        }
+    }//GEN-LAST:event_btnUpdateStudentActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -480,6 +540,7 @@ public class StudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnUpdateStudent;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbxNationality;
     private javax.swing.JComboBox<String> cmbxReligion;
@@ -527,5 +588,7 @@ public class StudentDetails extends javax.swing.JFrame {
             row[9] = studentList.get(i).getStudentGuardianID() == null ? "-" : studentList.get(i).getStudentGuardianID();
             model.addRow(row);
         }
+//        tblStudentDetails.setModel(model);
+        
     }
 }
