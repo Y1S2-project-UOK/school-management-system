@@ -147,6 +147,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("WISDOM COLLEGE");
 
@@ -196,6 +197,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(20, 70, 137));
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WELCOME");
 

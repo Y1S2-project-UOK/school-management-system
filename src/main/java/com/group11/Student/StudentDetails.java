@@ -135,8 +135,14 @@ public class StudentDetails extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Password");
 
+        txtGuradianID.setBackground(new java.awt.Color(20, 70, 137));
+        txtGuradianID.setForeground(new java.awt.Color(20, 70, 137));
+        txtGuradianID.setDisabledTextColor(new java.awt.Color(20, 70, 137));
+        txtGuradianID.setSelectedTextColor(new java.awt.Color(20, 70, 137));
+        txtGuradianID.setSelectionColor(new java.awt.Color(20, 70, 137));
+
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(20, 70, 137));
         jLabel11.setText("Gaurdian ID");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -168,7 +174,7 @@ public class StudentDetails extends javax.swing.JFrame {
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -220,13 +226,13 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbxReligion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(25, 25, 25)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(jLabel11)
+                    .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         tblStudentDetails.setModel(new javax.swing.table.DefaultTableModel(
@@ -234,14 +240,14 @@ public class StudentDetails extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Admission No", "Name", "Email", "Date of Birth", "Gender", "Address", "Nationality", "Religion", "Password", "Guardian ID"
+                "Admission No", "Name", "Email", "Date of Birth", "Gender", "Address", "Nationality", "Religion", "Password"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

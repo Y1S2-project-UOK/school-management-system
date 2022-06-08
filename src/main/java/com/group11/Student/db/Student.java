@@ -174,7 +174,7 @@ public class Student {
             stmt.setString(7, nationality);
             stmt.setString(8, pwd);
             stmt.setString(9, religion);
-            stmt.setString(10, guardianID);
+            stmt.setString(10, "123");
             System.out.println(stmt.execute());
             conn.close();
             return true;
