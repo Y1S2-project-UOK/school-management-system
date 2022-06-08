@@ -12,6 +12,15 @@ public class User {
     public boolean createUser(String staffId, String email, String password,String reasonToJoin) {
         try {
             Connection conn = MysqlConnect.ConnectDB();
+            //check user already registered
+            // String CheckQuery = "CALL get_user_by_staff_id(?);";
+            // CallableStatement CheckStmt = (CallableStatement) conn.prepareCall(CheckQuery);
+            // CheckStmt.setString(1, staffId);
+            // ResultSet CheckRs = CheckStmt.executeQuery();
+            // System.out.println(CheckRs.next());
+            // if(CheckRs.next()){
+            //     throw new Exception("your may already registered try to login");
+            // }
             //validate staff member 
             String query = "CALL auth_staff_member(?,?,?);";
             CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
@@ -19,6 +28,9 @@ public class User {
             stmt.setString(2, email);
             stmt.setString(3, password);
             ResultSet rs = stmt.executeQuery();
+            if(!rs.next()){
+                throw new Exception("check your staffID, email or password");
+            }
             if (rs.next()) {
                    //adding new user as system user
                    String newQuery = "CALL add_system_user(?,?);";
