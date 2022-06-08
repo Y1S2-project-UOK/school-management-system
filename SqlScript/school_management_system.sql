@@ -109,7 +109,7 @@ CREATE TABLE `exam` (
 --
 DROP TABLE IF EXISTS `guardian`;
 CREATE TABLE `guardian` (
-  `guardian_id` int NOT NULL AUTO_INCREMENT,
+  `guardian_id` varchar(50) NOT NULL,
   `guardian_name` varchar(255) DEFAULT NULL,
   `guardian_phone_no` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`guardian_id`)
@@ -136,7 +136,7 @@ CREATE TABLE `student` (
   `student_nationality` varchar(255) DEFAULT NULL,
   `student_password` varchar(255) DEFAULT NULL,
   `student_religion` varchar(255) DEFAULT NULL,
-  `guardian_id` int DEFAULT NULL,
+  `guardian_id` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`student_admission_no`),
   CONSTRAINT `fk_student_guardian` FOREIGN KEY (`guardian_id`) REFERENCES `guardian` (`guardian_id`) ON UPDATE CASCADE
 );

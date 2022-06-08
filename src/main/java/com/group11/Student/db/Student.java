@@ -42,7 +42,7 @@ public class Student {
         this.studentGuardianID = studentGuardianID;
     }
 
-    public String getStudentRegNo() {
+      public String getStudentRegNo() {
         return studentRegNo;
     }
 
@@ -123,7 +123,7 @@ public class Student {
     }
     
     public static ArrayList<Student> getStudentList() {
-        ArrayList<Student> studentList = new ArrayList<Student>();
+        ArrayList<Student> studentList = new ArrayList<>();
         try {
             Connection conn = MysqlConnect.ConnectDB();
 
@@ -133,10 +133,7 @@ public class Student {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Student student = new Student(rs.getString("student_admission_no"), rs.getString("gender"),
-                        rs.getString("student_address"), rs.getString("student_date_of_birth"), rs.getString("student_email"),
-                        rs.getString("student_name"), rs.getString("student_nationality"), rs.getString("student_password"),
-                        rs.getString("student_religion"), rs.getString("guardian_id"));
+                Student student = new Student(rs.getString("student_admission_no"),rs.getString("student_name"), rs.getString("student_email"), rs.getString("student_date_of_birth"), rs.getString("gender"),rs.getString("student_address"),rs.getString("student_nationality"),  rs.getString("student_religion"), rs.getString("student_password"),rs.getString("guardian_id"));
                 studentList.add(student);
             }
             return studentList;
@@ -162,7 +159,10 @@ public class Student {
             ) {
         try {
             Connection conn = MysqlConnect.ConnectDB();
-            // validate staff member
+            System.out.println("gender: " + gender);
+            System.out.println("guardian id: " + guardianID);
+            System.out.println("address: " + address);
+             //validate staff member
             String query = "CALL add_student(?,?,?,?,?,?,?,?,?,?);";
             CallableStatement stmt = (CallableStatement) conn.prepareCall(query);
             stmt.setString(1, studentNo);

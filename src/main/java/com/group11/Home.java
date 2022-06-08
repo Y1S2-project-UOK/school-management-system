@@ -4,6 +4,8 @@
  */
 package com.group11;
 
+import com.group11.Student.StudentDetails;
+import com.group11.Student.db.Student;
 import com.group11.auth.SignIn;
 import com.group11.config.MysqlConnect;
 import com.group11.staff.StaffDetails;
@@ -378,7 +380,9 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStaffManagementActionPerformed
 
     private void btnStudentManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManagement1ActionPerformed
-
+        dispose();
+        StudentDetails student = new StudentDetails();
+        student.setVisible(true);
     }//GEN-LAST:event_btnStudentManagement1ActionPerformed
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
