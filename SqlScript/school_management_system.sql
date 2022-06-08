@@ -63,9 +63,8 @@ CREATE TABLE `announcement` (
   `title` varchar(255) NOT NULL,
   `venue` varchar(255),
   `publisher` varchar(255),
-  `system_users_id` int NOT NULL,
-  PRIMARY KEY (`announcement_id`),
-  CONSTRAINT `fk_announcement_system_user` FOREIGN KEY (`system_users_id`) REFERENCES `system_user` (`user_id`) ON UPDATE CASCADE
+  PRIMARY KEY (`announcement_id`)
+  
 ); 
 --
 -- Table structure for table `class_room`
