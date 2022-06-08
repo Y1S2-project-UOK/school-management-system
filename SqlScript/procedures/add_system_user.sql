@@ -4,6 +4,6 @@ BEGIN
   INSERT INTO system_user (aprove_status,reason_to_join,staff_reg_no)
   VALUES(0, reason_to_join, staff_reg_no);
 END $$ 
-DELIMITER;
+DELIMITER ;
 
 -- CALL add_system_user("test","103");

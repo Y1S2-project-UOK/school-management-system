@@ -4,7 +4,7 @@ BEGIN
   INSERT INTO staff (staff_reg_no,staff_name,staff_email,staff_date_of_birth,staff_gender,staff_nic,staff_nationality,staff_religion,password,basic_salary)
   VALUES(staff_reg_no,staff_name,staff_email,staff_date_of_birth,staff_gender,staff_nic,staff_nationality,staff_religion,password,basic_salary);
 END $$ 
-DELIMITER;
+DELIMITER ;
 
 -- CALL add_staff_member();
 

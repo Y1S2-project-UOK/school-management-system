@@ -4,6 +4,7 @@
  */
 package com.group11.Student;
 
+import com.group11.Home;
 import com.group11.Student.db.Student;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -62,6 +63,8 @@ public class StudentDetails extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnAdd = new javax.swing.JButton();
         dpDateOfBirth = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,10 +81,10 @@ public class StudentDetails extends javax.swing.JFrame {
             }
         });
 
-        cmbxNationality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinhala", "Tamil", "Muslim", "Burgher", "Other" }));
+        cmbxNationality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Please select ", "Sinhala", "Tamil", "Muslim", "Burgher", "Other" }));
         cmbxNationality.setToolTipText("");
 
-        cmbxReligion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buddhist", "Hindu", "Islam", "Catholic", "Christian", "Other" }));
+        cmbxReligion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Please select", "Buddhist", "Hindu", "Islam", "Catholic", "Christian", "Other" }));
 
         rbtnMale.setBackground(new java.awt.Color(20, 70, 137));
         buttonGroup1.add(rbtnMale);
@@ -222,7 +225,7 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtGuradianID, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         tblStudentDetails.setModel(new javax.swing.table.DefaultTableModel(
@@ -248,12 +251,31 @@ public class StudentDetails extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblStudentDetails.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblStudentDetailsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblStudentDetails);
 
         btnAdd.setText("Add new Student");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
+            }
+        });
+
+        btnBack.setText("Back to Home");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnClear.setText("Clear All");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
             }
         });
 
@@ -268,10 +290,14 @@ public class StudentDetails extends javax.swing.JFrame {
                     .addComponent(dpDateOfBirth))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(80, 80, 80)
+                        .addComponent(btnClear)
+                        .addGap(91, 91, 91)
+                        .addComponent(btnBack)
+                        .addGap(0, 410, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -282,8 +308,11 @@ public class StudentDetails extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdd)
+                    .addComponent(btnBack)
+                    .addComponent(btnClear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,10 +323,11 @@ public class StudentDetails extends javax.swing.JFrame {
                         .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(97, 97, 97))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtStudentNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudentNumberActionPerformed
@@ -365,6 +395,52 @@ public class StudentDetails extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        dispose();
+        Home home = new Home();
+        home.setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void tblStudentDetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStudentDetailsMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tblStudentDetails.getModel();
+        int selectedRowIndex = tblStudentDetails.getSelectedRow();
+        txtStudentNumber.setText(model.getValueAt(selectedRowIndex, 0).toString());
+        txtName.setText(model.getValueAt(selectedRowIndex, 1).toString());
+        txtEmail.setText(model.getValueAt(selectedRowIndex, 2).toString());
+        dpDateOfBirth.setText(model.getValueAt(selectedRowIndex, 3).toString());
+        txtAddress.setText(model.getValueAt(selectedRowIndex, 5).toString());
+        cmbxNationality.setSelectedItem(model.getValueAt(selectedRowIndex, 6).toString());
+        cmbxReligion.setSelectedItem(model.getValueAt(selectedRowIndex, 7).toString());
+        txtPassword.setText(model.getValueAt(selectedRowIndex, 8).toString());
+        txtGuradianID.setText(model.getValueAt(selectedRowIndex, 9).toString());
+        
+        String gender = model.getValueAt(selectedRowIndex, 4).toString();
+        if(gender == "Male") {
+            rbtnMale.setSelected(true);
+        }
+        else {
+            rbtnFemale.setSelected(true);
+        }
+        
+    }//GEN-LAST:event_tblStudentDetailsMouseClicked
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtStudentNumber.setText("");
+        txtName.setText("");
+        txtEmail.setText("");
+        dpDateOfBirth.setText("");
+        txtAddress.setText("");
+        cmbxNationality.setSelectedIndex(0);
+        cmbxReligion.setSelectedIndex(0);
+        txtPassword.setText("");
+        txtGuradianID.setText("");
+        if(rbtnMale.isSelected()) {
+            rbtnMale.setSelected(false);
+        } else {
+            rbtnFemale.setSelected(false);
+        }
+    }//GEN-LAST:event_btnClearActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -402,6 +478,8 @@ public class StudentDetails extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnClear;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbxNationality;
     private javax.swing.JComboBox<String> cmbxReligion;
@@ -441,7 +519,7 @@ public class StudentDetails extends javax.swing.JFrame {
             row[1] = studentList.get(i).getStudentName() == null ? "-" : studentList.get(i).getStudentName();
             row[2] = studentList.get(i).getStudentEmail() == null ? "-" : studentList.get(i).getStudentEmail();
             row[3] = studentList.get(i).getStudentDOB() == null ? "-" : studentList.get(i).getStudentDOB();
-            row[4] = studentList.get(i).getStudentGender() == null ? "-" : studentList.get(i).getStudentGender() == null;
+            row[4] = studentList.get(i).getStudentGender() == null ? "-" : studentList.get(i).getStudentGender();
             row[5] = studentList.get(i).getStudentAddress() == null ? "-" : studentList.get(i).getStudentAddress();
             row[6] = studentList.get(i).getStudentNationality() == null ? "-" : studentList.get(i).getStudentNationality();
             row[7] = studentList.get(i).getStudentReligion() == null ? "-" : studentList.get(i).getStudentReligion();
